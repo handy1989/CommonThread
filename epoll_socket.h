@@ -1,17 +1,24 @@
 #ifndef _EPOLL_SOCKET_H_
 #define _EPOLL_SOCKET_H_
 
+#include <sys/socket.h>
+#include <sys/epoll.h>
+#include <netinet/in.h>
+#include <pthread.h>
+#include <stdio.h>
+#include <string>
+
 typedef _sock_info_t
 {
     int m_insten_port;
     int m_port;
-    string m_recv_buf;
+    std::string m_recv_buf;
 
 }sock_info_t;
 
 typedef _netaddres_info_t
 {
-    string m_ip_addr;
+    std::string m_ip_addr;
     int m_port;
 
 }netaddres_info_t;
@@ -23,6 +30,7 @@ class EpollSocket
 public:
     EpollSocket();
     EpollSocket(netaddres_info_t *netaddr, const int& addr_num);
+    ~EpollSocket();
     void init(netaddres_info_t *netaddr, const int& addr_num);
     int wait_available_socket();
     bool remove_socket(int sock_fd);
