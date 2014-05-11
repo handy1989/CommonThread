@@ -117,17 +117,19 @@ bool EpollSocket::add(int sock_fd, int cur_time, int listen_port, int port, int 
     m_socket_info[sock_fd].m_time_ms = cur_time;
     m_socket_info[sock_fd].m_closed = false;
 
-    ret = (epoll_ctl(sock_fd, EPOLL_CTL_ADD, sock_fd, &ev) == 0);
+    ret = (epoll_ctl(m_epoll_fd, EPOLL_CTL_ADD, sock_fd, &ev) == 0);
     if (ret)
     {
         ++m_socket_num;
+        LOG(INFO) << "add success, fd[" << sock_fd << "] sock_addr[" << sock_addr << "] listen_port[" << listen_port << "] port[" << port << "]";
+        LOG(INFO) << "now m_socket_num is " << m_socket_num;
     }
     else
     {
         m_socket_info[sock_fd].m_time_ms = 0;
+        LOG(INFO) << "add failed, fd[" << sock_fd << "] sock_addr[" << sock_addr << "] listen_port[" << listen_port << "] port[" << port << "] error[" << strerror(errno) << "]";
     }
     pthread_mutex_unlock(&m_mutex);
-    LOG(INFO) << "add fd: " << sock_fd << " ret: " << ret;
     return ret;
 }
 
@@ -181,6 +183,12 @@ bool EpollSocket::listenPort()
         LOG(INFO) << "socket[" << i << "] listens on port: " << m_net_addr[i].m_port << " success!";
     }
     return true;
+}
+
+int EpollSocket::count()
+{
+    LOG(INFO) << "EpollSocket::count() called!";
+    return m_socket_num;
 }
 
 bool EpollSocket::setNonblock(int& sock_fd)

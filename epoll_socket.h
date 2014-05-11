@@ -60,6 +60,7 @@ public:
     bool add(int sock_fd, int cur_time, int listen_port, int port, int sock_addr, int sock_type);
     bool bindPort();
     bool listenPort();
+    int count();
     bool setNonblock(int& sock_fd);
     int getTime(int socket_fd);
 

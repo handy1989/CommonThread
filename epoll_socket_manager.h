@@ -11,11 +11,17 @@ public:
 
     static EpollSocketManager* getInstance();
     
-    bool initSocket(netaddres_into_t *netaddr, const int& addr_num);
-    int get_conn_socket_count();
-    bool putIntoEpoll(int fd, int listen_port, int client_port, int ip_addr);
-    int wait_available_socket();
-    bool remove(int sock_fd);
+    bool initSocket(netaddres_info_t *netaddr, const int& addr_num, const int& wait_time_ms);
+    bool putIntoEpoll(int fd, int cur_time, int listen_port, int client_port, int ip_addr, int sock_type);
+    int waitAvailableSocket();
+    int count();
+    SocketAvaiManager socketAvaiBegin();
+    SocketAvaiManager socketAvaiEnd();
+    SocketInfoManager socketInfoBegin();
+    SocketInfoManager socketInfoEnd();
+    SocketInfoManager getSocketInfo(int sock_fd);
+
+    bool removeSocket(int sock_fd);
     void closeSocket(int sock_fd);
 
 private:
