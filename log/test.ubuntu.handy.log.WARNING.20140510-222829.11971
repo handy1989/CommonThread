@@ -1,0 +1,5 @@
+Log file created at: 2014/05/10 22:28:29
+Running on machine: ubuntu
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+E0510 22:28:29.531679 11971 epoll_socket.cpp:141] socket[0] setNonblock failed!
+E0510 22:28:29.533231 11971 epoll_socket.cpp:105] setNonblock failed: 5

@@ -4,13 +4,17 @@
 #include <sys/socket.h>
 #include <sys/epoll.h>
 #include <netinet/in.h>
+#include <arpa/inet.h>
+#include <unistd.h>
+#include <fcntl.h>
 #include <pthread.h>
 #include <stdio.h>
 #include <string>
+#include <glog/logging.h>
 
-typedef _sock_info_t
+typedef struct _sock_info_t
 {
-    int m_insten_port;
+    int m_listen_port;
     int m_port;
     int m_addr;
     int m_time_ms;
@@ -18,10 +22,11 @@ typedef _sock_info_t
 
 }sock_info_t;
 
-typedef _netaddres_info_t
+typedef struct _netaddres_info_t
 {
     std::string m_ip_addr;
     int m_port;
+    int m_backlog;
 
 }netaddres_info_t;
 
@@ -40,7 +45,7 @@ public:
     bool add(int sock_fd, int listen_port, int port, int sock_addr);
     bool bindPort();
     bool listenPort();
-    bool setNonblock();
+    bool setNonblock(int& sock_fd);
 protected:
     int getPort(int sock_fd);
     int getAddr(int sock_fd);
@@ -54,7 +59,7 @@ private:
     int *m_socket;
     netaddres_info_t *m_net_addr;
     pthread_mutex_t m_mutex;
-    sock_info_t m_sock_info[EPOLL_SIZE];
+    sock_info_t m_socket_info[EPOLL_SIZE];
     struct epoll_event m_events[EVENTS_SIZE];
 };
 

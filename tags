@@ -1,0 +1,50 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+EPOLL_SIZE	./epoll_socket.h	/^    static const int EPOLL_SIZE = 6000;$/;"	m	class:EpollSocket
+EVENTS_SIZE	./epoll_socket.h	/^    static const int EVENTS_SIZE = EPOLL_SIZE;$/;"	m	class:EpollSocket
+EpollSocket	./epoll_socket.cpp	/^EpollSocket::EpollSocket()$/;"	f	class:EpollSocket
+EpollSocket	./epoll_socket.cpp	/^EpollSocket::EpollSocket(netaddres_info_t *netaddr, const int& addr_num, const int& wait_time_ms)$/;"	f	class:EpollSocket
+EpollSocket	./epoll_socket.h	/^class EpollSocket$/;"	c
+EpollSocketManager	./epoll_socket_manager.h	/^class EpollSocketManager$/;"	c
+_EPOLL_SOCKET_H_	./epoll_socket.h	2;"	d
+_EPOLL_SOCKET_MANAGER_H_	./epoll_socket_manager.h	2;"	d
+_netaddres_info_t	./epoll_socket.h	/^typedef struct _netaddres_info_t$/;"	s
+_sock_info_t	./epoll_socket.h	/^typedef struct _sock_info_t$/;"	s
+add	./epoll_socket.cpp	/^bool EpollSocket::add(int sock_fd, int listen_port, int port, int sock_addr)$/;"	f	class:EpollSocket
+bindPort	./epoll_socket.cpp	/^bool EpollSocket::bindPort()$/;"	f	class:EpollSocket
+getAddr	./epoll_socket.cpp	/^int EpollSocket::getAddr(int sock_fd)$/;"	f	class:EpollSocket
+getPort	./epoll_socket.cpp	/^int EpollSocket::getPort(int sock_fd)$/;"	f	class:EpollSocket
+getSockCount	./epoll_socket.cpp	/^int EpollSocket::getSockCount()$/;"	f	class:EpollSocket
+init	./epoll_socket.cpp	/^void EpollSocket::init(netaddres_info_t *netaddr, const int& addr_num, const int& wait_time_ms)$/;"	f	class:EpollSocket
+listenPort	./epoll_socket.cpp	/^bool EpollSocket::listenPort()$/;"	f	class:EpollSocket
+m_addr	./epoll_socket.h	/^    int m_addr;$/;"	m	struct:_sock_info_t
+m_available_socket_num	./epoll_socket.h	/^    int m_available_socket_num;$/;"	m	class:EpollSocket
+m_backlog	./epoll_socket.h	/^    int m_backlog;$/;"	m	struct:_netaddres_info_t
+m_epoll_fd	./epoll_socket.h	/^    int m_epoll_fd;$/;"	m	class:EpollSocket
+m_epoll_socket	./epoll_socket_manager.h	/^    EpollSocket m_epoll_socket;$/;"	m	class:EpollSocketManager
+m_epoll_socket_manager_instance	./epoll_socket_manager.h	/^    static EpollSocketManager* m_epoll_socket_manager_instance;$/;"	m	class:EpollSocketManager
+m_events	./epoll_socket.h	/^    struct epoll_event m_events[EVENTS_SIZE];$/;"	m	class:EpollSocket	typeref:struct:EpollSocket::epoll_event
+m_insten_port	./epoll_socket.h	/^    int m_insten_port;$/;"	m	struct:_sock_info_t
+m_ip_addr	./epoll_socket.h	/^    std::string m_ip_addr;$/;"	m	struct:_netaddres_info_t
+m_listen_num	./epoll_socket.h	/^    int m_listen_num;$/;"	m	class:EpollSocket
+m_mutex	./epoll_socket.h	/^    pthread_mutex_t m_mutex;$/;"	m	class:EpollSocket
+m_net_addr	./epoll_socket.h	/^    netaddres_info_t *m_net_addr;$/;"	m	class:EpollSocket
+m_port	./epoll_socket.h	/^    int m_port;$/;"	m	struct:_netaddres_info_t
+m_port	./epoll_socket.h	/^    int m_port;$/;"	m	struct:_sock_info_t
+m_recv_buf	./epoll_socket.h	/^    std::string m_recv_buf;$/;"	m	struct:_sock_info_t
+m_sock_info	./epoll_socket.h	/^    sock_info_t m_sock_info[EPOLL_SIZE];$/;"	m	class:EpollSocket
+m_socket	./epoll_socket.h	/^    int *m_socket;$/;"	m	class:EpollSocket
+m_socket_num	./epoll_socket.h	/^    int m_socket_num;$/;"	m	class:EpollSocket
+m_time_ms	./epoll_socket.h	/^    int m_time_ms;$/;"	m	struct:_sock_info_t
+m_wait_time_ms	./epoll_socket.h	/^    int m_wait_time_ms;$/;"	m	class:EpollSocket
+main	./test.cpp	/^int main(int argc, char *argv[])$/;"	f
+netaddres_info_t	./epoll_socket.h	/^}netaddres_info_t;$/;"	t	typeref:struct:_netaddres_info_t
+removeSocket	./epoll_socket.cpp	/^bool EpollSocket::removeSocket(int sock_fd)$/;"	f	class:EpollSocket
+setNonblock	./epoll_socket.cpp	/^bool EpollSocket::setNonblock(int sock_fd)$/;"	f	class:EpollSocket
+sock_info_t	./epoll_socket.h	/^}sock_info_t;$/;"	t	typeref:struct:_sock_info_t
+waitAvailableSocket	./epoll_socket.cpp	/^int EpollSocket::waitAvailableSocket()$/;"	f	class:EpollSocket
+~EpollSocket	./epoll_socket.cpp	/^EpollSocket::~EpollSocket()$/;"	f	class:EpollSocket
