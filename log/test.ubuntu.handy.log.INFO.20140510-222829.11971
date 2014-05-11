@@ -1,9 +1,0 @@
-Log file created at: 2014/05/10 22:28:29
-Running on machine: ubuntu
-Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
-I0510 22:28:29.530926 11971 epoll_socket.cpp:31] EpollSocket init
-I0510 22:28:29.531636 11971 epoll_socket.cpp:55] EpollSocket init success!
-E0510 22:28:29.531679 11971 epoll_socket.cpp:141] socket[0] setNonblock failed!
-I0510 22:28:29.533210 11971 epoll_socket.cpp:94] add fd: 5
-E0510 22:28:29.533231 11971 epoll_socket.cpp:105] setNonblock failed: 5
-I0510 22:28:29.533913 11971 epoll_socket.cpp:175] socket[0] listens on port: 6666 success!
