@@ -1,6 +1,7 @@
 #ifndef _EPOLL_SOCKET_MANAGER_H_
 #define _EPOLL_SOCKET_MANAGER_H_
 
+#include "common_queue.h"
 #include "epoll_socket.h"
 
 class EpollSocketManager
@@ -20,7 +21,8 @@ public:
     SocketInfoManager socketInfoBegin();
     SocketInfoManager socketInfoEnd();
     SocketInfoManager getSocketInfo(int sock_fd);
-
+    
+    bool timeout(int cur_time_ms);
     bool removeSocket(int sock_fd);
     void closeSocket(int sock_fd);
 
@@ -28,6 +30,8 @@ private:
     static EpollSocketManager* m_epoll_socket_manager_instance;
     EpollSocket m_epoll_socket;
 };
+
+typedef CommonQueue<int> ClientSocketQueue;
 
 #endif
 

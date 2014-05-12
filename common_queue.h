@@ -34,7 +34,7 @@ public:
     
     bool init(int capacity)
     {
-        pthread_mutex_init(&m_mutex);
+        pthread_mutex_init(&m_mutex, NULL);
         if (pthread_cond_init(&m_cond_not_full, NULL))
         {
             LOG(ERROR) << "CommonQueue init failed!";
@@ -52,7 +52,129 @@ public:
     bool pop(T& retVal, int wait_ms)
     {
         bool ret = false;
-        pthread_mutex_lock(m_mutex);
+        pthread_mutex_lock(&m_mutex);
+
+        try
+        {
+            if (m_queue.empty())
+            {
+                // queue is empty
+                if (0 == wait_ms)
+                {
+                    // wait infinitely
+                    while (m_queue.empty())
+                    {
+                        pthread_cond_wait(&m_cond_not_empty, &m_mutex);
+                    }
+                }
+                else
+                {
+                    // wait for timeout
+                    struct timespec timespot;
+                    if (wait_ms > 0)
+                    {
+                        getAbsTimeout(wait_ms, timespot);
+                    }
+                    else
+                    {
+                        timespot.tv_sec = 0;
+                        timespot.tv_nsec = 0;
+                    }
+                    pthread_cond_timedwait(&m_cond_not_empty, &m_mutex, &timespot);
+                }
+            }
+            else
+            {
+                retVal = m_queue.front();
+                m_queue.pop();
+                ret = true;
+                pthread_mutex_unlock(&m_mutex);
+            }
+        }
+        catch (std::exception&)
+        {
+            ret = false;
+        }
+        pthread_mutex_unlock(&m_mutex);
+        return ret;
+    }
+
+    bool push(const T& element, int wait_ms)
+    {
+        bool ret = false;
+        pthread_mutex_lock(&m_mutex);
+
+        try
+        {
+            if (m_queue.size() >= m_capacity)
+            {
+                //queue is full
+                if (0 == wait_ms)
+                {
+                    //wait infinitely
+                    while (m_queue.size() >= m_capacity)
+                    {
+                        pthread_cond_wait(&m_cond_not_full, &m_mutex);
+                    }
+                }
+                else
+                {
+                    //wait for timeout
+                    struct timespec timespot;
+                    if (wait_ms > 0)
+                    {
+                        getAbsTimeout(wait_ms, timespot);
+                    }
+                    else
+                    {
+                        timespot.tv_sec = 0;
+                        timespot.tv_nsec = 0;
+                    }
+                    pthread_cond_timedwait(&m_cond_not_full, &m_mutex, &timespot);
+                }
+            }
+            else
+            {
+                m_queue.push(element);
+                if (m_max_size < m_queue.size())
+                {
+                    m_max_size = m_queue.size();
+                }
+                pthread_cond_signal(&m_cond_not_empty);
+                ret = true;
+            }
+        }
+        catch (std::exception &)
+        {
+            ret = false;
+        }
+        pthread_mutex_unlock(&m_mutex);
+        return ret;
+    }
+    
+    bool pop(T& retVal)
+    {
+        return pop(retVal, -1);
+    }
+    
+    bool push(const T& element)
+    {
+        return push(element, -1);
+    }
+
+    int getCapacity()
+    {
+        return m_capacity;
+    }
+
+    int getSize()
+    {
+        return m_queue.size();
+    }
+
+    int getMaxSize()
+    {
+        return m_max_size;
     }
 
 private:
@@ -72,7 +194,7 @@ private:
         //}
         int timeout_ns = timeout_ms * 1000 * 1000 + now.tv_usec * 1000; // change to nanoseconds
         timeout.tv_sec = now.tv_sec + timeout_ns / 1000 / 1000 / 1000;
-        timeout.tv_nsec = timeout_ns % (1000 * 1000 * 1000)
+        timeout.tv_nsec = timeout_ns % (1000 * 1000 * 1000);
 
     }
 };

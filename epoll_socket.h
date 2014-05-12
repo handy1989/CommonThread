@@ -25,6 +25,7 @@ typedef struct _sock_info_t
     int m_port;
     int m_addr;
     int m_time_ms;
+    int m_conn_timeout_ms;
     int m_type;
     bool m_closed;
     int m_need_recv_bytes;
