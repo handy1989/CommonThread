@@ -91,7 +91,7 @@ bool EpollSocket::removeSocket(int sock_fd)
     return ret;
 }
 
-bool EpollSocket::add(int sock_fd, int cur_time, int listen_port, int port, int sock_addr, int sock_type)
+bool EpollSocket::add(int sock_fd, int cur_time, int listen_port, int port, int sock_addr, int conn_timeout_ms, int sock_type)
 {
     LOG(INFO) << "add fd: " << sock_fd;
     struct epoll_event ev;
@@ -115,6 +115,7 @@ bool EpollSocket::add(int sock_fd, int cur_time, int listen_port, int port, int 
     m_socket_info[sock_fd].m_addr = sock_addr;
     m_socket_info[sock_fd].m_type = sock_type;
     m_socket_info[sock_fd].m_time_ms = cur_time;
+    m_socket_info[sock_fd].m_conn_timeout_ms = conn_timeout_ms;
     m_socket_info[sock_fd].m_closed = false;
 
     ret = (epoll_ctl(m_epoll_fd, EPOLL_CTL_ADD, sock_fd, &ev) == 0);

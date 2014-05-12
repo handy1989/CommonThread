@@ -63,11 +63,71 @@ void ClientConnectionHandler::work()
 {
     int accept_socket_fd;
     int available_fd_count;
-
+    
+    struct sockaddr_in client_addr;
     while (true)
     {
         available_fd_count = EpollSocketManager::getInstance()->waitAvailableSocket();
+        m_cur_time = Utility::getCurMileSecond();
         
+        LOG(INFO) << "available socket num: " << available_fd_count;
+
+        if (available_fd_count <= 0)
+        {
+            continue;
+        }
+        SocketInfoManager it_end = EpollSocketManager::getInstance()->socketAvaiEnd();
+        for (SocketInfoManager it = EpollSocketManager::getInstance()->socketAvaiBegin(); it != it_end; ++it)
+        {
+            if (it.isListener())
+            {
+                LOG(INFO) << "listener available!";
+                while (true)
+                {
+                    accept_socket_fd = it.acceptSocket(&client_addr);
+                    if (accept_socket_fd > 0)
+                    {
+                        LOG(INFO) << "accept new fd[" << accept_socket_fd << "]";
+                        struct linger ling = {1, 0};
+                        setsockopt(accept_socket_fd, SOL_SOCKET, SO_LINGER, &linger, sizeof(linger));
+                        if (EpollSocketManager::getInstance()->putIntoEpoll(accept_socket_fd, cur_time, it.listenPort(), client_addr.sin_port, client_addr.sin_addr.s_addr, it.conn_timeout_ms()))
+                        {
+                            LOG(INFO) << "sockfd[" < accept_socket_fd << "] put into epoll success!";
+                        }
+                        else
+                        {
+                            LOG(INFO) << "sockfd[" < accept_socket_fd << "] put into epoll failed, now close it!";
+                            EpollSocketManager::getInstance()->closeSocket(accept_socket_fd);
+                        }
+                    }
+                    else
+                    {
+                        LOG(INFO) << "accetp new fd failed!";
+                        break;
+                    }
+                }
+                else
+                {
+                    LOG(INFO) << "client available!";
+                    if (it.inUsed())
+                    {
+                        if (!EpollSocketManager::getInstance()->removeSocket(it.getSocketFd()))
+                        {
+                            LOG(INFO) << "remove fd[" << it.getSocketFd() << "] from epoll failed!";
+                            EpollSocketManager::getInstance()->closeSocket(it.getSocketFd());
+                        }
+                        else
+                        {
+                            processConnection(it.getSocketFd(), it.listenPort(), it.getAddr(), it.getPort(), it.conn_timeout_ms());
+                        }
+                    }
+                    else
+                    {
+                        LOG(INFO) << "sockfd[" << it.getSocketFd() << "] not OK!";
+                    }
+                }
+            }
+        }
     }
 }
 

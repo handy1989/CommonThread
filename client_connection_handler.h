@@ -4,6 +4,7 @@
 #include "common_queue.h"
 #include "common_thread_pool.h"
 #include "epoll_socket_manager.h"
+#include "common_utility.h"
 
 class ClientConnectionHandler : public CommonThreadPool
 {

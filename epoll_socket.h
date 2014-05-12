@@ -232,6 +232,10 @@ public:
     {
         m_epoll_socket_ptr->m_socket_info[m_fd_index].m_recv_buf = "";
     }
+    int connTimeoutMs()
+    {
+        return m_epoll_socket_ptr->m_socket_info[m_fd_index].m_conn_timeout_ms;
+    }
 private:
     int m_fd_index;
     EpollSocket* m_epoll_socket_ptr;

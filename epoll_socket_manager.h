@@ -13,7 +13,7 @@ public:
     static EpollSocketManager* getInstance();
     
     bool initSocket(netaddres_info_t *netaddr, const int& addr_num, const int& wait_time_ms);
-    bool putIntoEpoll(int fd, int cur_time, int listen_port, int client_port, int ip_addr, int sock_type);
+    bool putIntoEpoll(int fd, int cur_time, int listen_port, int client_port, int ip_addr, int conn_timeout_ms, int sock_type = SOCKET_TYPE_CLIENT);
     int waitAvailableSocket();
     int count();
     SocketAvaiManager socketAvaiBegin();

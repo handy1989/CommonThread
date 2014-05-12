@@ -34,9 +34,9 @@ bool EpollSocketManager::initSocket(netaddres_info_t *netaddr, const int& addr_n
 }
 
 
-bool EpollSocketManager::putIntoEpoll(int fd, int cur_time,  int listen_port, int client_port, int ip_addr, int sock_type)
+bool EpollSocketManager::putIntoEpoll(int fd, int cur_time,  int listen_port, int client_port, int ip_addr, int conn_timeout_ms, int sock_type)
 {
-    if (!m_epoll_socket.add(fd, cur_time, listen_port, client_port, ip_addr, sock_type))
+    if (!m_epoll_socket.add(fd, cur_time, listen_port, client_port, ip_addr, conn_timeout_ms, sock_type))
     {
         LOG(ERROR) << "add fd[" << fd << "] to epoll failed. error info: " << strerror(errno);
         return false;
