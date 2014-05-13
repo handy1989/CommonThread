@@ -16,7 +16,17 @@ enum SocketType
 {
     SOCKET_TYPE_UNKNOWN = 0,
     SOCKET_TYPE_SERVER,
-    SOCKET_TUPE_CLIENT
+    SOCKET_TYPE_CLIENT
+};
+
+enum SOCKET_ERROR{
+    SOCKET_ERROR_WAIT_TRY_AGAIN,
+    SOCKET_ERROR_PEER_CLOSE,
+    SOCKET_ERROR_UNKNOW_OCCUR,
+    SOCKET_ERROR_SUCCESS,
+    SOCKET_ERROR_SIGN_INVALID,
+    SOCKET_ERROR_HEADER_SIZE_INVALID,
+    SOCKET_ERROR_BODY_SIZE_INVALID
 };
 
 typedef struct _sock_info_t
@@ -29,6 +39,7 @@ typedef struct _sock_info_t
     int m_type;
     bool m_closed;
     int m_need_recv_bytes;
+    int m_task_sign;
     std::string m_recv_buf;
 
 }sock_info_t;
@@ -58,7 +69,7 @@ public:
     int waitAvailableSocket();
     int getSocketCount();
     bool removeSocket(int sock_fd);
-    bool add(int sock_fd, int cur_time, int listen_port, int port, int sock_addr, int sock_type);
+    bool add(int sock_fd, int cur_time, int listen_port, int port, int sock_addr, int conn_timeout_ms, int sock_type);
     bool bindPort();
     bool listenPort();
     int count();
@@ -102,6 +113,10 @@ public:
     {
         return m_epoll_socket_ptr->m_socket_info[m_socket_fd].m_addr;
     }
+    int getTaskSign()
+    {
+        return m_epoll_socket_ptr->m_socket_info[m_socket_fd].m_task_sign;
+    }
     int getPort()
     {
         return m_epoll_socket_ptr->m_socket_info[m_socket_fd].m_port;
@@ -109,6 +124,10 @@ public:
     int getListenPort()
     {
         return m_epoll_socket_ptr->m_socket_info[m_socket_fd].m_listen_port;
+    }
+    int connTimeoutMs()
+    {
+        return m_epoll_socket_ptr->m_socket_info[m_socket_fd].m_conn_timeout_ms;
     }
     bool available()
     {
@@ -187,6 +206,10 @@ public:
     {
         return m_epoll_socket_ptr->m_socket_info[m_fd_index].m_addr;
     }
+    int getTaskSign()
+    {
+        return m_epoll_socket_ptr->m_socket_info[m_fd_index].m_task_sign;
+    }
     bool inUsed()
     {
         return m_epoll_socket_ptr->m_socket_info[m_fd_index].m_time_ms != 0;
@@ -204,6 +227,17 @@ public:
         ++m_fd_index;
         return *this;
     }
+    bool timeout(uint32_t cur_time)
+    {
+        if(cur_time > m_epoll_socket_ptr->m_socket_info[m_fd_index].m_time_ms + m_epoll_socket_ptr->m_socket_info[m_fd_index].m_conn_timeout_ms)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
     void close()
     {
         m_epoll_socket_ptr->m_socket_info[m_fd_index].m_time_ms = 0;
@@ -219,6 +253,10 @@ public:
     std::string& getBuffer()
     {
         return m_epoll_socket_ptr->m_socket_info[m_fd_index].m_recv_buf;
+    }
+    int taskSign()
+    {
+        return m_epoll_socket_ptr->m_socket_info[m_fd_index].m_task_sign;
     }
     int needRecvBytes()
     {

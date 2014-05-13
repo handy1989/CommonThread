@@ -9,10 +9,10 @@ using namespace std;
 class Utility
 {
 public:
-    static int getCurMileSeconds()
+    static int getCurMilliSeconds()
     {
         struct timeval now;
-        gettimeofday(&now);
+        gettimeofday(&now, NULL);
         return now.tv_sec * 1000 + now.tv_usec / 1000;
     }
 

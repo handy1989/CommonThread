@@ -5,7 +5,8 @@ OBJECT=test
 
 all: $(OBJECT)
 
-test: epoll_socket.cpp epoll_socket_manager.cpp test.cpp
+SRC=$(shell find . -name "*.cpp")
+test: $(SRC)
 	g++ $^ -o $@ $(LIBS) $(INCLUDES)
 
 clean :

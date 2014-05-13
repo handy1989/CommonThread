@@ -4,6 +4,8 @@
 #include "common_queue.h"
 #include "epoll_socket.h"
 
+#define DEFAULT_RECV_LEN sizeof(int)
+
 class EpollSocketManager
 {
 public:

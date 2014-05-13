@@ -3,7 +3,7 @@
 NetworkManager::NetworkManager()
 {
     m_queue_size = 0;
-    m_client_thread_count = 0;
+    m_client_receive_thread_count = 0;
     m_client_connection_handler = NULL;
     m_sock_queue = NULL;
 }
@@ -39,17 +39,17 @@ bool NetworkManager::initSocket(netaddres_info_t* netaddr, const int& addr_num, 
 
 void NetworkManager::initClientRecv(int check_internal, int recv_thread_count)
 {
-    m_socket_queue = new ClientSockQueue();
-    m_socket_queue->init(m_queue_size);
+    m_sock_queue = new ClientSocketQueue();
+    m_sock_queue->init(m_queue_size);
     
     m_client_connection_handler = new ClientConnectionHandler(check_internal);
-    m_client_connection_handler->initQueues(m_socket_queue);
+    m_client_connection_handler->initQueues(m_sock_queue);
 
     m_client_receiver_handler = new ClientReceiverHandler(recv_thread_count);
-    m_client_receiver_handler->initQueues();
+    m_client_receiver_handler->initQueues(m_sock_queue, m_message_queue);
 }
 
-void NetworkManager::start()
+bool NetworkManager::start()
 {
     if (m_client_connection_handler)
     {
@@ -59,7 +59,7 @@ void NetworkManager::start()
             return false;
         }
     }
-    if (m_receiver_handler)
+    if (m_client_receiver_handler)
     {
         if (!m_client_receiver_handler->startThreads())
         {
@@ -72,6 +72,6 @@ void NetworkManager::start()
 
 void NetworkManager::waitThreadTermination()
 {
-    m_client_connection_handler->waitThreadTermination();
-    m_client_reveiver_handler->waitThreadTermination();
+    m_client_connection_handler->waitThreadsTermination();
+    m_client_receiver_handler->waitThreadsTermination();
 }

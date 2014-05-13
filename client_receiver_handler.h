@@ -1,16 +1,18 @@
 #ifndef _CLIENT_RECEIVER_HANDLER_H_
 #define _CLIENT_RECEIVER_HANDLER_H_
 
-#include <glog/logging>
+#include <glog/logging.h>
 #include "common_queue.h"
 #include "common_utility.h"
 #include "client_connection_handler.h"
+#include "message.h"
+#include "message_factory.h"
 
-class ClientReceiverHandler : public CommonThreadPoll
+class ClientReceiverHandler : public CommonThreadPool
 {
 public:
     ClientReceiverHandler(int thread_count);
-    virtual ClientReceiverHandler();
+    virtual ~ClientReceiverHandler();
 
     int recvData(
             int sock_fd,
@@ -18,14 +20,14 @@ public:
             const int need_recv_bytes,
             int& real_recv_len); 
     int recvCmd(SocketInfoManager& socket_info);
-    void initQueues(ClientSocketQueue *socket_queue, MessageQueue* message_queue);
+    void initQueues(ClientSocketQueue* socket_queue, MessageQueue* message_queue);
 
 protected:
     virtual void work();
 
 private:
-    ClientSocketQueue* socket_queue;
-    MessageQueue* message_queue;
+    ClientSocketQueue* m_socket_queue;
+    MessageQueue* m_message_queue;
     
     int m_recv_message_num;
     int m_push_queue_succ;

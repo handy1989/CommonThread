@@ -180,7 +180,7 @@ bool EpollSocket::listenPort()
             LOG(ERROR) << "socket[" << i << "] failed to listen on port: " << m_net_addr[i].m_port << " and error : " << errno;
             return false;
         }
-        add(m_socket[i], cur_time, m_net_addr[i].m_port, 0, 0, 0);
+        add(m_socket[i], cur_time, m_net_addr[i].m_port, 0, 0, 0, SOCKET_TYPE_SERVER);
         LOG(INFO) << "socket[" << i << "] listens on port: " << m_net_addr[i].m_port << " success!";
     }
     return true;

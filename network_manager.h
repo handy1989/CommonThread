@@ -1,9 +1,10 @@
 #ifndef _NETWORK_MANAGER_H_
 #define _NETWORK_MANAGER_H_
 
-#include <glog/logging>
+#include <glog/logging.h>
 #include "epoll_socket.h"
 #include "client_connection_handler.h"
+#include "client_receiver_handler.h"
 
 class NetworkManager
 {
@@ -22,12 +23,13 @@ public:
 private:
     static NetworkManager* m_instance;
     int m_queue_size;
-    int m_client_recieve_thread_count;
+    int m_client_receive_thread_count;
 
-    ClientConnectHandler* m_client_connection_handler;
-    ClientSocketQueue* m_socket_queue;
+    ClientConnectionHandler* m_client_connection_handler;
+    ClientSocketQueue* m_sock_queue;
 
-    ClientReveiverHandler* m_client_receiver_handler;
+    ClientReceiverHandler* m_client_receiver_handler;
+    MessageQueue* m_message_queue;
 
  
 };

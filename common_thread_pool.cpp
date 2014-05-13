@@ -11,19 +11,19 @@ void CommonThreadPool::destroyThreadId()
     }
 }
 
-bool CommonThreadPoll::startThreads()
+bool CommonThreadPool::startThreads()
 {
     if (m_pool_size > 0)
     {
         destroyThreadId();
         pthread_attr_t attr;
         pthread_attr_init(&attr);
-        pthread_attr_getstacksize(&attr, STACK_SIZE);
+        pthread_attr_setstacksize(&attr, STACK_SIZE);
         
         m_thread_ids = new pthread_t[m_pool_size];
         for (int i = 0; i < m_pool_size; ++i)
         {
-            if (pthread_create(m_thread_ids[i], &attr, threadProc, (void*)this))
+            if (pthread_create(&m_thread_ids[i], &attr, threadProc, (void*)this))
             {
                 return false;
             }

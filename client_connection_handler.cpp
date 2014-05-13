@@ -68,7 +68,7 @@ void ClientConnectionHandler::work()
     while (true)
     {
         available_fd_count = EpollSocketManager::getInstance()->waitAvailableSocket();
-        m_cur_time = Utility::getCurMileSecond();
+        m_cur_time = Utility::getCurMilliSeconds();
         
         LOG(INFO) << "available socket num: " << available_fd_count;
 
@@ -76,8 +76,8 @@ void ClientConnectionHandler::work()
         {
             continue;
         }
-        SocketInfoManager it_end = EpollSocketManager::getInstance()->socketAvaiEnd();
-        for (SocketInfoManager it = EpollSocketManager::getInstance()->socketAvaiBegin(); it != it_end; ++it)
+        SocketAvaiManager it = EpollSocketManager::getInstance()->socketAvaiBegin();
+        for (; it != EpollSocketManager::getInstance()->socketAvaiEnd(); ++it)
         {
             if (it.isListener())
             {
@@ -89,14 +89,14 @@ void ClientConnectionHandler::work()
                     {
                         LOG(INFO) << "accept new fd[" << accept_socket_fd << "]";
                         struct linger ling = {1, 0};
-                        setsockopt(accept_socket_fd, SOL_SOCKET, SO_LINGER, &linger, sizeof(linger));
-                        if (EpollSocketManager::getInstance()->putIntoEpoll(accept_socket_fd, cur_time, it.listenPort(), client_addr.sin_port, client_addr.sin_addr.s_addr, it.conn_timeout_ms()))
+                        setsockopt(accept_socket_fd, SOL_SOCKET, SO_LINGER, &ling, sizeof(linger));
+                        if (EpollSocketManager::getInstance()->putIntoEpoll(accept_socket_fd, m_cur_time, it.getListenPort(), client_addr.sin_port, client_addr.sin_addr.s_addr, it.connTimeoutMs()))
                         {
-                            LOG(INFO) << "sockfd[" < accept_socket_fd << "] put into epoll success!";
+                            LOG(INFO) << "sockfd[" << accept_socket_fd << "] put into epoll success!";
                         }
                         else
                         {
-                            LOG(INFO) << "sockfd[" < accept_socket_fd << "] put into epoll failed, now close it!";
+                            LOG(INFO) << "sockfd[" << accept_socket_fd << "] put into epoll failed, now close it!";
                             EpollSocketManager::getInstance()->closeSocket(accept_socket_fd);
                         }
                     }
@@ -106,25 +106,25 @@ void ClientConnectionHandler::work()
                         break;
                     }
                 }
-                else
+            }
+            else
+            {
+                LOG(INFO) << "client available!";
+                if (it.inUsed())
                 {
-                    LOG(INFO) << "client available!";
-                    if (it.inUsed())
+                    if (!EpollSocketManager::getInstance()->removeSocket(it.getSocketFd()))
                     {
-                        if (!EpollSocketManager::getInstance()->removeSocket(it.getSocketFd()))
-                        {
-                            LOG(INFO) << "remove fd[" << it.getSocketFd() << "] from epoll failed!";
-                            EpollSocketManager::getInstance()->closeSocket(it.getSocketFd());
-                        }
-                        else
-                        {
-                            processConnection(it.getSocketFd(), it.listenPort(), it.getAddr(), it.getPort(), it.conn_timeout_ms());
-                        }
+                        LOG(INFO) << "remove fd[" << it.getSocketFd() << "] from epoll failed!";
+                        EpollSocketManager::getInstance()->closeSocket(it.getSocketFd());
                     }
                     else
                     {
-                        LOG(INFO) << "sockfd[" << it.getSocketFd() << "] not OK!";
+                        processConnection(it.getSocketFd(), it.getListenPort(), it.getAddr(), it.getPort(), it.connTimeoutMs());
                     }
+                }
+                else
+                {
+                    LOG(INFO) << "sockfd[" << it.getSocketFd() << "] not OK!";
                 }
             }
         }
