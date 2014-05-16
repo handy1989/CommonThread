@@ -50,6 +50,8 @@ void EpollSocket::init(netaddres_info_t *netaddr, const int& addr_num, const int
        m_socket_info[i].m_port = 0;
        m_socket_info[i].m_time_ms = 0;
        m_socket_info[i].m_addr = 0;
+       m_socket_info[i].m_type = 0;
+       m_socket_info[i].m_closed = false;
     }
     m_socket_num = 0;
     LOG(INFO) << "EpollSocket init success!";
@@ -89,7 +91,7 @@ bool EpollSocket::removeSocket(int sock_fd)
     return ret;
 }
 
-bool EpollSocket::add(int sock_fd, int listen_port, int port, int sock_addr)
+bool EpollSocket::add(int sock_fd, int cur_time, int listen_port, int port, int sock_addr, int sock_type)
 {
     LOG(INFO) << "add fd: " << sock_fd;
     struct epoll_event ev;
@@ -111,6 +113,9 @@ bool EpollSocket::add(int sock_fd, int listen_port, int port, int sock_addr)
     pthread_mutex_lock(&m_mutex);
     m_socket_info[sock_fd].m_port = port;
     m_socket_info[sock_fd].m_addr = sock_addr;
+    m_socket_info[sock_fd].m_type = sock_type;
+    m_socket_info[sock_fd].m_time_ms = cur_time;
+    m_socket_info[sock_fd].m_closed = false;
 
     ret = (epoll_ctl(sock_fd, EPOLL_CTL_ADD, sock_fd, &ev) == 0);
     if (ret)
@@ -164,6 +169,7 @@ bool EpollSocket::bindPort()
 
 bool EpollSocket::listenPort()
 {
+    int cur_time = 0;
     for (int i = 0; i < m_listen_num; ++i)
     {
         if (listen(m_socket[i], m_net_addr[i].m_backlog) == -1)
@@ -171,7 +177,7 @@ bool EpollSocket::listenPort()
             LOG(ERROR) << "socket[" << i << "] failed to listen on port: " << m_net_addr[i].m_port << " and error : " << errno;
             return false;
         }
-        add(m_socket[i], m_net_addr[i].m_port, 0, 0);
+        add(m_socket[i], cur_time, m_net_addr[i].m_port, 0, 0, 0);
         LOG(INFO) << "socket[" << i << "] listens on port: " << m_net_addr[i].m_port << " success!";
     }
     return true;
@@ -205,4 +211,34 @@ int EpollSocket::getPort(int sock_fd)
 int EpollSocket::getAddr(int sock_fd)
 {
     return sock_fd > 0 && sock_fd < EPOLL_SIZE ? m_socket_info[sock_fd].m_addr : 0;
+}
+
+int EpollSocket::getTime(int sock_fd)
+{
+    return sock_fd > 0 && sock_fd < EPOLL_SIZE ? m_socket_info[sock_fd].m_time_ms : 0;
+}
+
+SocketAvaiManager EpollSocket::socketAvaiBegin()
+{
+    return SocketAvaiManager(0, this);
+}
+
+SocketAvaiManager EpollSocket::socketAvaiEnd()
+{
+    return SocketAvaiManager(m_available_socket_num, this);
+}
+
+SocketInfoManager EpollSocket::socketInfoBegin()
+{
+    return SocketInfoManager(0, this);
+}
+
+SocketInfoManager EpollSocket::socketInfoEnd()
+{
+    return SocketInfoManager(EPOLL_SIZE, this);
+}
+
+SocketInfoManager EpollSocket::socketInfo(int sock_fd)
+{
+    return SocketInfoManager(sock_fd, this);
 }

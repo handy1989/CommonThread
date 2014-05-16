@@ -1,0 +1,9 @@
+Log file created at: 2014/05/15 19:57:29
+Running on machine: ubuntu
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0515 19:57:29.840174 37107 epoll_socket.cpp:31] EpollSocket init
+I0515 19:57:29.840523 37107 epoll_socket.cpp:57] EpollSocket init success!
+I0515 19:57:29.840598 37107 epoll_socket.cpp:165] socket[0] 5 bind to port 6666 success
+I0515 19:57:29.840641 37107 epoll_socket.cpp:96] add fd: 5
+I0515 19:57:29.840652 37107 epoll_socket.cpp:130] add fd: 5 ret: 0
+I0515 19:57:29.840657 37107 epoll_socket.cpp:181] socket[0] listens on port: 6666 success!
