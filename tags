@@ -4,6 +4,80 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ClientConnectionHandler	client_connection_handler.cpp	/^ClientConnectionHandler::ClientConnectionHandler(int check_interval) : CommonThreadPool(1)$/;"	f	class:ClientConnectionHandler	signature:(int check_interval)
+ClientConnectionHandler	client_connection_handler.h	/^    ClientConnectionHandler(int check_internal);$/;"	p	class:ClientConnectionHandler	access:public	signature:(int check_internal)
+ClientConnectionHandler	client_connection_handler.h	/^class ClientConnectionHandler : public CommonThreadPool$/;"	c	inherits:CommonThreadPool
+ClientConnectionHandler::ClientConnectionHandler	client_connection_handler.cpp	/^ClientConnectionHandler::ClientConnectionHandler(int check_interval) : CommonThreadPool(1)$/;"	f	class:ClientConnectionHandler	signature:(int check_interval)
+ClientConnectionHandler::ClientConnectionHandler	client_connection_handler.h	/^    ClientConnectionHandler(int check_internal);$/;"	p	class:ClientConnectionHandler	access:public	signature:(int check_internal)
+ClientConnectionHandler::checkTimeout	client_connection_handler.cpp	/^void ClientConnectionHandler::checkTimeout()$/;"	f	class:ClientConnectionHandler	signature:()
+ClientConnectionHandler::checkTimeout	client_connection_handler.h	/^    void checkTimeout();$/;"	p	class:ClientConnectionHandler	access:private	signature:()
+ClientConnectionHandler::initQueues	client_connection_handler.cpp	/^void ClientConnectionHandler::initQueues(ClientSocketQueue* recv_sock_q)$/;"	f	class:ClientConnectionHandler	signature:(ClientSocketQueue* recv_sock_q)
+ClientConnectionHandler::initQueues	client_connection_handler.h	/^    void initQueues(ClientSocketQueue*);$/;"	p	class:ClientConnectionHandler	access:public	signature:(ClientSocketQueue*)
+ClientConnectionHandler::m_check_internal	client_connection_handler.h	/^    int m_check_internal;$/;"	m	class:ClientConnectionHandler	access:private
+ClientConnectionHandler::m_cur_time	client_connection_handler.h	/^    int m_cur_time;$/;"	m	class:ClientConnectionHandler	access:private
+ClientConnectionHandler::m_last_check_point	client_connection_handler.h	/^    int m_last_check_point;$/;"	m	class:ClientConnectionHandler	access:private
+ClientConnectionHandler::m_recv_sock_q	client_connection_handler.h	/^    ClientSocketQueue* m_recv_sock_q;$/;"	m	class:ClientConnectionHandler	access:private
+ClientConnectionHandler::processConnection	client_connection_handler.cpp	/^void ClientConnectionHandler::processConnection(int new_fd, int listen_port, int ip_addr, int client_port, int conn_timeout_ms)$/;"	f	class:ClientConnectionHandler	signature:(int new_fd, int listen_port, int ip_addr, int client_port, int conn_timeout_ms)
+ClientConnectionHandler::processConnection	client_connection_handler.h	/^    void processConnection($/;"	p	class:ClientConnectionHandler	access:private	signature:( int new_fd, int listen_port, int ip_addr, int client_port, int conn_timeout_ms)
+ClientConnectionHandler::work	client_connection_handler.cpp	/^void ClientConnectionHandler::work()$/;"	f	class:ClientConnectionHandler	signature:()
+ClientConnectionHandler::work	client_connection_handler.h	/^    virtual void work();$/;"	p	class:ClientConnectionHandler	access:protected	signature:()
+ClientConnectionHandler::~ClientConnectionHandler	client_connection_handler.cpp	/^ClientConnectionHandler::~ClientConnectionHandler()$/;"	f	class:ClientConnectionHandler	signature:()
+ClientConnectionHandler::~ClientConnectionHandler	client_connection_handler.h	/^    virtual ~ClientConnectionHandler();$/;"	p	class:ClientConnectionHandler	access:public	signature:()
+ClientReceiverHandler	client_receiver_handler.cpp	/^ClientReceiverHandler::ClientReceiverHandler(int thread_count) : CommonThreadPool(thread_count)$/;"	f	class:ClientReceiverHandler	signature:(int thread_count)
+ClientReceiverHandler	client_receiver_handler.h	/^    ClientReceiverHandler(int thread_count);$/;"	p	class:ClientReceiverHandler	access:public	signature:(int thread_count)
+ClientReceiverHandler	client_receiver_handler.h	/^    virtual ClientReceiverHandler();$/;"	p	class:ClientReceiverHandler	access:public	signature:()
+ClientReceiverHandler	client_receiver_handler.h	/^class ClientReceiverHandler : public CommonThreadPoll$/;"	c	inherits:CommonThreadPoll
+ClientReceiverHandler::ClientReceiverHandler	client_receiver_handler.cpp	/^ClientReceiverHandler::ClientReceiverHandler(int thread_count) : CommonThreadPool(thread_count)$/;"	f	class:ClientReceiverHandler	signature:(int thread_count)
+ClientReceiverHandler::ClientReceiverHandler	client_receiver_handler.h	/^    ClientReceiverHandler(int thread_count);$/;"	p	class:ClientReceiverHandler	access:public	signature:(int thread_count)
+ClientReceiverHandler::ClientReceiverHandler	client_receiver_handler.h	/^    virtual ClientReceiverHandler();$/;"	p	class:ClientReceiverHandler	access:public	signature:()
+ClientReceiverHandler::initQueues	client_receiver_handler.h	/^    void initQueues(ClientSocketQueue *socket_queue, MessageQueue* message_queue);$/;"	p	class:ClientReceiverHandler	access:public	signature:(ClientSocketQueue *socket_queue, MessageQueue* message_queue)
+ClientReceiverHandler::m_push_queue_fail	client_receiver_handler.h	/^    int m_push_queue_fail;$/;"	m	class:ClientReceiverHandler	access:private
+ClientReceiverHandler::m_push_queue_succ	client_receiver_handler.h	/^    int m_push_queue_succ;$/;"	m	class:ClientReceiverHandler	access:private
+ClientReceiverHandler::m_recv_message_num	client_receiver_handler.h	/^    int m_recv_message_num;$/;"	m	class:ClientReceiverHandler	access:private
+ClientReceiverHandler::message_queue	client_receiver_handler.h	/^    MessageQueue* message_queue;$/;"	m	class:ClientReceiverHandler	access:private
+ClientReceiverHandler::recvCmd	client_receiver_handler.h	/^    int recvCmd(SocketInfoManager& socket_info);$/;"	p	class:ClientReceiverHandler	access:public	signature:(SocketInfoManager& socket_info)
+ClientReceiverHandler::recvData	client_receiver_handler.h	/^    int recvData($/;"	p	class:ClientReceiverHandler	access:public	signature:( int sock_fd, char *recv_buffer, const int need_recv_bytes, int& real_recv_len)
+ClientReceiverHandler::socket_queue	client_receiver_handler.h	/^    ClientSocketQueue* socket_queue;$/;"	m	class:ClientReceiverHandler	access:private
+ClientReceiverHandler::work	client_receiver_handler.h	/^    virtual void work();$/;"	p	class:ClientReceiverHandler	access:protected	signature:()
+ClientSocketQueue	epoll_socket_manager.h	/^typedef CommonQueue<int> ClientSocketQueue;$/;"	t
+CommonQueue	common_queue.h	/^    CommonQueue()$/;"	f	class:CommonQueue	access:public	signature:()
+CommonQueue	common_queue.h	/^template <typename T> class CommonQueue$/;"	c
+CommonQueue::CommonQueue	common_queue.h	/^    CommonQueue()$/;"	f	class:CommonQueue	access:public	signature:()
+CommonQueue::getAbsTimeout	common_queue.h	/^    void getAbsTimeout(int timeout_ms, struct timespec& timeout)$/;"	f	class:CommonQueue	access:private	signature:(int timeout_ms, struct timespec& timeout)
+CommonQueue::getCapacity	common_queue.h	/^    int getCapacity()$/;"	f	class:CommonQueue	access:public	signature:()
+CommonQueue::getMaxSize	common_queue.h	/^    int getMaxSize()$/;"	f	class:CommonQueue	access:public	signature:()
+CommonQueue::getSize	common_queue.h	/^    int getSize()$/;"	f	class:CommonQueue	access:public	signature:()
+CommonQueue::init	common_queue.h	/^    bool init(int capacity)$/;"	f	class:CommonQueue	access:public	signature:(int capacity)
+CommonQueue::m_capacity	common_queue.h	/^    int m_capacity;$/;"	m	class:CommonQueue	access:private
+CommonQueue::m_cond_not_empty	common_queue.h	/^    pthread_cond_t m_cond_not_empty;$/;"	m	class:CommonQueue	access:private
+CommonQueue::m_cond_not_full	common_queue.h	/^    pthread_cond_t m_cond_not_full;$/;"	m	class:CommonQueue	access:private
+CommonQueue::m_max_size	common_queue.h	/^    int m_max_size;$/;"	m	class:CommonQueue	access:private
+CommonQueue::m_mutex	common_queue.h	/^    pthread_mutex_t m_mutex;$/;"	m	class:CommonQueue	access:private
+CommonQueue::m_queue	common_queue.h	/^    std::queue<T> m_queue;$/;"	m	class:CommonQueue	access:private
+CommonQueue::pop	common_queue.h	/^    bool pop(T& retVal)$/;"	f	class:CommonQueue	access:public	signature:(T& retVal)
+CommonQueue::pop	common_queue.h	/^    bool pop(T& retVal, int wait_ms)$/;"	f	class:CommonQueue	access:public	signature:(T& retVal, int wait_ms)
+CommonQueue::push	common_queue.h	/^    bool push(const T& element)$/;"	f	class:CommonQueue	access:public	signature:(const T& element)
+CommonQueue::push	common_queue.h	/^    bool push(const T& element, int wait_ms)$/;"	f	class:CommonQueue	access:public	signature:(const T& element, int wait_ms)
+CommonQueue::~CommonQueue	common_queue.h	/^    virtual ~CommonQueue()$/;"	f	class:CommonQueue	access:public	signature:()
+CommonThreadPoll::startThreads	common_thread_pool.cpp	/^bool CommonThreadPoll::startThreads()$/;"	f	class:CommonThreadPoll	signature:()
+CommonThreadPool	common_thread_pool.h	/^    CommonThreadPool(int pool_size) : m_pool_size(pool_size)$/;"	f	class:CommonThreadPool	access:public	signature:(int pool_size)
+CommonThreadPool	common_thread_pool.h	/^class CommonThreadPool$/;"	c
+CommonThreadPool::CommonThreadPool	common_thread_pool.h	/^    CommonThreadPool(int pool_size) : m_pool_size(pool_size)$/;"	f	class:CommonThreadPool	access:public	signature:(int pool_size)
+CommonThreadPool::STACK_SIZE	common_thread_pool.h	/^    const static int STACK_SIZE = (256*1024);$/;"	m	class:CommonThreadPool	access:private
+CommonThreadPool::destroyThreadId	common_thread_pool.cpp	/^void CommonThreadPool::destroyThreadId()$/;"	f	class:CommonThreadPool	signature:()
+CommonThreadPool::destroyThreadId	common_thread_pool.h	/^    void destroyThreadId();$/;"	p	class:CommonThreadPool	access:public	signature:()
+CommonThreadPool::detachThreads	common_thread_pool.cpp	/^void CommonThreadPool::detachThreads()$/;"	f	class:CommonThreadPool	signature:()
+CommonThreadPool::detachThreads	common_thread_pool.h	/^    void detachThreads();$/;"	p	class:CommonThreadPool	access:public	signature:()
+CommonThreadPool::getPoolSize	common_thread_pool.h	/^    inline int getPoolSize()$/;"	f	class:CommonThreadPool	access:public	signature:()
+CommonThreadPool::m_pool_size	common_thread_pool.h	/^    int m_pool_size;$/;"	m	class:CommonThreadPool	access:private
+CommonThreadPool::m_thread_ids	common_thread_pool.h	/^    pthread_t *m_thread_ids;$/;"	m	class:CommonThreadPool	access:private
+CommonThreadPool::startThreads	common_thread_pool.h	/^    bool startThreads();$/;"	p	class:CommonThreadPool	access:public	signature:()
+CommonThreadPool::threadProc	common_thread_pool.cpp	/^void *CommonThreadPool::threadProc(void *para)$/;"	f	class:CommonThreadPool	signature:(void *para)
+CommonThreadPool::threadProc	common_thread_pool.h	/^    static void* threadProc(void* para);$/;"	p	class:CommonThreadPool	access:private	signature:(void* para)
+CommonThreadPool::waitThreadsTermination	common_thread_pool.cpp	/^void CommonThreadPool::waitThreadsTermination()$/;"	f	class:CommonThreadPool	signature:()
+CommonThreadPool::waitThreadsTermination	common_thread_pool.h	/^    void waitThreadsTermination();$/;"	p	class:CommonThreadPool	access:public	signature:()
+CommonThreadPool::work	common_thread_pool.h	/^    virtual void work() = 0;$/;"	p	class:CommonThreadPool	access:protected	signature:()
+CommonThreadPool::~CommonThreadPool	common_thread_pool.h	/^    virtual ~CommonThreadPool()$/;"	f	class:CommonThreadPool	access:public	signature:()
 EPOLL_SIZE	epoll_socket.h	/^    static const int EPOLL_SIZE = 6000;$/;"	m	class:EpollSocket	access:private
 EVENTS_SIZE	epoll_socket.h	/^    static const int EVENTS_SIZE = EPOLL_SIZE;$/;"	m	class:EpollSocket	access:private
 EpollSocket	epoll_socket.cpp	/^EpollSocket::EpollSocket()$/;"	f	class:EpollSocket	signature:()
@@ -17,11 +91,11 @@ EpollSocket::EpollSocket	epoll_socket.cpp	/^EpollSocket::EpollSocket()$/;"	f	cla
 EpollSocket::EpollSocket	epoll_socket.cpp	/^EpollSocket::EpollSocket(netaddres_info_t *netaddr, const int& addr_num, const int& wait_time_ms)$/;"	f	class:EpollSocket	signature:(netaddres_info_t *netaddr, const int& addr_num, const int& wait_time_ms)
 EpollSocket::EpollSocket	epoll_socket.h	/^    EpollSocket();$/;"	p	class:EpollSocket	access:public	signature:()
 EpollSocket::EpollSocket	epoll_socket.h	/^    EpollSocket(netaddres_info_t *netaddr, const int& addr_num, const int& wait_time_ms);$/;"	p	class:EpollSocket	access:public	signature:(netaddres_info_t *netaddr, const int& addr_num, const int& wait_time_ms)
-EpollSocket::add	epoll_socket.cpp	/^bool EpollSocket::add(int sock_fd, int cur_time, int listen_port, int port, int sock_addr, int sock_type)$/;"	f	class:EpollSocket	signature:(int sock_fd, int cur_time, int listen_port, int port, int sock_addr, int sock_type)
+EpollSocket::add	epoll_socket.cpp	/^bool EpollSocket::add(int sock_fd, int cur_time, int listen_port, int port, int sock_addr, int conn_timeout_ms, int sock_type)$/;"	f	class:EpollSocket	signature:(int sock_fd, int cur_time, int listen_port, int port, int sock_addr, int conn_timeout_ms, int sock_type)
 EpollSocket::add	epoll_socket.h	/^    bool add(int sock_fd, int cur_time, int listen_port, int port, int sock_addr, int sock_type);$/;"	p	class:EpollSocket	access:public	signature:(int sock_fd, int cur_time, int listen_port, int port, int sock_addr, int sock_type)
 EpollSocket::bindPort	epoll_socket.cpp	/^bool EpollSocket::bindPort()$/;"	f	class:EpollSocket	signature:()
 EpollSocket::bindPort	epoll_socket.h	/^    bool bindPort();$/;"	p	class:EpollSocket	access:public	signature:()
-EpollSocket::count	epoll_socket.cpp	/^bool EpollSocket::count()$/;"	f	class:EpollSocket	signature:()
+EpollSocket::count	epoll_socket.cpp	/^int EpollSocket::count()$/;"	f	class:EpollSocket	signature:()
 EpollSocket::count	epoll_socket.h	/^    int count();$/;"	p	class:EpollSocket	access:public	signature:()
 EpollSocket::getAddr	epoll_socket.cpp	/^int EpollSocket::getAddr(int sock_fd)$/;"	f	class:EpollSocket	signature:(int sock_fd)
 EpollSocket::getAddr	epoll_socket.h	/^    int getAddr(int sock_fd);$/;"	p	class:EpollSocket	access:protected	signature:(int sock_fd)
@@ -63,46 +137,80 @@ EpollSocket::waitAvailableSocket	epoll_socket.cpp	/^int EpollSocket::waitAvailab
 EpollSocket::waitAvailableSocket	epoll_socket.h	/^    int waitAvailableSocket();$/;"	p	class:EpollSocket	access:public	signature:()
 EpollSocket::~EpollSocket	epoll_socket.cpp	/^EpollSocket::~EpollSocket()$/;"	f	class:EpollSocket	signature:()
 EpollSocket::~EpollSocket	epoll_socket.h	/^    ~EpollSocket();$/;"	p	class:EpollSocket	access:public	signature:()
-EpollSocketManager	epoll_socket_manager.cpp	/^SocketInfoManager::EpollSocketManager()$/;"	f	class:SocketInfoManager	signature:()
+EpollSocketManager	epoll_socket_manager.cpp	/^EpollSocketManager::EpollSocketManager()$/;"	f	class:EpollSocketManager	signature:()
 EpollSocketManager	epoll_socket_manager.h	/^    EpollSocketManager();$/;"	p	class:EpollSocketManager	access:public	signature:()
 EpollSocketManager	epoll_socket_manager.h	/^class EpollSocketManager$/;"	c
+EpollSocketManager::EpollSocketManager	epoll_socket_manager.cpp	/^EpollSocketManager::EpollSocketManager()$/;"	f	class:EpollSocketManager	signature:()
 EpollSocketManager::EpollSocketManager	epoll_socket_manager.h	/^    EpollSocketManager();$/;"	p	class:EpollSocketManager	access:public	signature:()
-EpollSocketManager::closeSocket	epoll_socket_manager.cpp	/^bool EpollSocketManager::closeSocket(int sock_fd)$/;"	f	class:EpollSocketManager	signature:(int sock_fd)
+EpollSocketManager::closeSocket	epoll_socket_manager.cpp	/^void EpollSocketManager::closeSocket(int sock_fd)$/;"	f	class:EpollSocketManager	signature:(int sock_fd)
 EpollSocketManager::closeSocket	epoll_socket_manager.h	/^    void closeSocket(int sock_fd);$/;"	p	class:EpollSocketManager	access:public	signature:(int sock_fd)
 EpollSocketManager::count	epoll_socket_manager.cpp	/^int EpollSocketManager::count()$/;"	f	class:EpollSocketManager	signature:()
 EpollSocketManager::count	epoll_socket_manager.h	/^    int count();$/;"	p	class:EpollSocketManager	access:public	signature:()
+EpollSocketManager::getInstance	epoll_socket_manager.cpp	/^EpollSocketManager* EpollSocketManager::getInstance()$/;"	f	class:EpollSocketManager	signature:()
 EpollSocketManager::getInstance	epoll_socket_manager.h	/^    static EpollSocketManager* getInstance();$/;"	p	class:EpollSocketManager	access:public	signature:()
 EpollSocketManager::getSocketInfo	epoll_socket_manager.cpp	/^SocketInfoManager EpollSocketManager::getSocketInfo(int sock_fd)$/;"	f	class:EpollSocketManager	signature:(int sock_fd)
 EpollSocketManager::getSocketInfo	epoll_socket_manager.h	/^    SocketInfoManager getSocketInfo(int sock_fd);$/;"	p	class:EpollSocketManager	access:public	signature:(int sock_fd)
-EpollSocketManager::get_conn_socket_count	epoll_socket_manager.cpp	/^int EpollSocketManager::get_conn_socket_count()$/;"	f	class:EpollSocketManager	signature:()
-EpollSocketManager::get_conn_socket_count	epoll_socket_manager.h	/^    int get_conn_socket_count();$/;"	p	class:EpollSocketManager	access:public	signature:()
 EpollSocketManager::initSocket	epoll_socket_manager.cpp	/^bool EpollSocketManager::initSocket(netaddres_info_t *netaddr, const int& addr_num, const int& wait_time_ms)$/;"	f	class:EpollSocketManager	signature:(netaddres_info_t *netaddr, const int& addr_num, const int& wait_time_ms)
-EpollSocketManager::initSocket	epoll_socket_manager.h	/^    bool initSocket(netaddres_into_t *netaddr, const int& addr_num, const int& wait_time_ms);$/;"	p	class:EpollSocketManager	access:public	signature:(netaddres_into_t *netaddr, const int& addr_num, const int& wait_time_ms)
+EpollSocketManager::initSocket	epoll_socket_manager.h	/^    bool initSocket(netaddres_info_t *netaddr, const int& addr_num, const int& wait_time_ms);$/;"	p	class:EpollSocketManager	access:public	signature:(netaddres_info_t *netaddr, const int& addr_num, const int& wait_time_ms)
 EpollSocketManager::m_epoll_socket	epoll_socket_manager.h	/^    EpollSocket m_epoll_socket;$/;"	m	class:EpollSocketManager	access:private
+EpollSocketManager::m_epoll_socket_manager_instance	epoll_socket_manager.cpp	/^EpollSocketManager* EpollSocketManager::m_epoll_socket_manager_instance = new EpollSocketManager();$/;"	m	class:EpollSocketManager	file:
 EpollSocketManager::m_epoll_socket_manager_instance	epoll_socket_manager.h	/^    static EpollSocketManager* m_epoll_socket_manager_instance;$/;"	m	class:EpollSocketManager	access:private
-EpollSocketManager::putIntoEpoll	epoll_socket_manager.cpp	/^bool EpollSocketManager::putIntoEpoll(int fd, int cur_time,  int listen_port, int client_port, int ip_addr, int sock_type)$/;"	f	class:EpollSocketManager	signature:(int fd, int cur_time, int listen_port, int client_port, int ip_addr, int sock_type)
-EpollSocketManager::putIntoEpoll	epoll_socket_manager.h	/^    bool putIntoEpoll(int fd, int cur_time, int listen_port, int client_port, int ip_addr, int sock_type);$/;"	p	class:EpollSocketManager	access:public	signature:(int fd, int cur_time, int listen_port, int client_port, int ip_addr, int sock_type)
-EpollSocketManager::remove	epoll_socket_manager.cpp	/^bool EpollSocketManager::remove(int sock_fd)$/;"	f	class:EpollSocketManager	signature:(int sock_fd)
-EpollSocketManager::remove	epoll_socket_manager.h	/^    bool remove(int sock_fd);$/;"	p	class:EpollSocketManager	access:public	signature:(int sock_fd)
+EpollSocketManager::putIntoEpoll	epoll_socket_manager.cpp	/^bool EpollSocketManager::putIntoEpoll(int fd, int cur_time,  int listen_port, int client_port, int ip_addr, int conn_timeout_ms, int sock_type)$/;"	f	class:EpollSocketManager	signature:(int fd, int cur_time, int listen_port, int client_port, int ip_addr, int conn_timeout_ms, int sock_type)
+EpollSocketManager::putIntoEpoll	epoll_socket_manager.h	/^    bool putIntoEpoll(int fd, int cur_time, int listen_port, int client_port, int ip_addr, int conn_timeout_ms, int sock_type = SOCKET_TYPE_CLIENT);$/;"	p	class:EpollSocketManager	access:public	signature:(int fd, int cur_time, int listen_port, int client_port, int ip_addr, int conn_timeout_ms, int sock_type = SOCKET_TYPE_CLIENT)
+EpollSocketManager::removeSocket	epoll_socket_manager.cpp	/^bool EpollSocketManager::removeSocket(int sock_fd)$/;"	f	class:EpollSocketManager	signature:(int sock_fd)
+EpollSocketManager::removeSocket	epoll_socket_manager.h	/^    bool removeSocket(int sock_fd);$/;"	p	class:EpollSocketManager	access:public	signature:(int sock_fd)
 EpollSocketManager::socketAvaiBegin	epoll_socket_manager.cpp	/^SocketAvaiManager EpollSocketManager::socketAvaiBegin()$/;"	f	class:EpollSocketManager	signature:()
+EpollSocketManager::socketAvaiBegin	epoll_socket_manager.h	/^    SocketAvaiManager socketAvaiBegin();$/;"	p	class:EpollSocketManager	access:public	signature:()
 EpollSocketManager::socketAvaiEnd	epoll_socket_manager.cpp	/^SocketAvaiManager EpollSocketManager::socketAvaiEnd()$/;"	f	class:EpollSocketManager	signature:()
-EpollSocketManager::socketAvailBegin	epoll_socket_manager.h	/^    SocketAvaiManager socketAvailBegin();$/;"	p	class:EpollSocketManager	access:public	signature:()
-EpollSocketManager::socketAvailEnd	epoll_socket_manager.h	/^    SocketAvaiManager socketAvailEnd();$/;"	p	class:EpollSocketManager	access:public	signature:()
-EpollSocketManager::socketInfoBegin	epoll_socket_manager.cpp	/^socketInfoManager EpollSocketManager::socketInfoBegin()$/;"	f	class:EpollSocketManager	signature:()
+EpollSocketManager::socketAvaiEnd	epoll_socket_manager.h	/^    SocketAvaiManager socketAvaiEnd();$/;"	p	class:EpollSocketManager	access:public	signature:()
+EpollSocketManager::socketInfoBegin	epoll_socket_manager.cpp	/^SocketInfoManager EpollSocketManager::socketInfoBegin()$/;"	f	class:EpollSocketManager	signature:()
 EpollSocketManager::socketInfoBegin	epoll_socket_manager.h	/^    SocketInfoManager socketInfoBegin();$/;"	p	class:EpollSocketManager	access:public	signature:()
-EpollSocketManager::socketInfoEnd	epoll_socket_manager.cpp	/^socketInfoManager EpollSocketManager::socketInfoEnd()$/;"	f	class:EpollSocketManager	signature:()
+EpollSocketManager::socketInfoEnd	epoll_socket_manager.cpp	/^SocketInfoManager EpollSocketManager::socketInfoEnd()$/;"	f	class:EpollSocketManager	signature:()
 EpollSocketManager::socketInfoEnd	epoll_socket_manager.h	/^    SocketInfoManager socketInfoEnd();$/;"	p	class:EpollSocketManager	access:public	signature:()
+EpollSocketManager::timeout	epoll_socket_manager.cpp	/^bool EpollSocketManager::timeout(int cur_time_ms)$/;"	f	class:EpollSocketManager	signature:(int cur_time_ms)
+EpollSocketManager::timeout	epoll_socket_manager.h	/^    bool timeout(int cur_time_ms);$/;"	p	class:EpollSocketManager	access:public	signature:(int cur_time_ms)
 EpollSocketManager::waitAvailableSocket	epoll_socket_manager.cpp	/^int EpollSocketManager::waitAvailableSocket()$/;"	f	class:EpollSocketManager	signature:()
 EpollSocketManager::waitAvailableSocket	epoll_socket_manager.h	/^    int waitAvailableSocket();$/;"	p	class:EpollSocketManager	access:public	signature:()
+EpollSocketManager::~EpollSocketManager	epoll_socket_manager.cpp	/^EpollSocketManager::~EpollSocketManager()$/;"	f	class:EpollSocketManager	signature:()
 EpollSocketManager::~EpollSocketManager	epoll_socket_manager.h	/^    ~EpollSocketManager();$/;"	p	class:EpollSocketManager	access:public	signature:()
+F	.session	/^setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e$/;"	v
+F	.session	/^setlocal indentkeys=0{,0},:,0#,!^F,o,O,e$/;"	v
 F	Session.vim	/^setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e$/;"	v
 F	Session.vim	/^setlocal indentkeys=0{,0},:,0#,!^F,o,O,e$/;"	v
-F7F7	test	/^ELF/;"	v
+NetworkManager	network_manager.cpp	/^NetworkManager::NetworkManager()$/;"	f	class:NetworkManager	signature:()
+NetworkManager	network_manager.h	/^    NetworkManager();$/;"	p	class:NetworkManager	access:public	signature:()
+NetworkManager	network_manager.h	/^class NetworkManager$/;"	c
+NetworkManager::NetworkManager	network_manager.cpp	/^NetworkManager::NetworkManager()$/;"	f	class:NetworkManager	signature:()
+NetworkManager::NetworkManager	network_manager.h	/^    NetworkManager();$/;"	p	class:NetworkManager	access:public	signature:()
+NetworkManager::getInstance	network_manager.cpp	/^NetworkManager* NetworkManager::getInstance()$/;"	f	class:NetworkManager	signature:()
+NetworkManager::getInstance	network_manager.h	/^    static NetworkManager* getInstance();$/;"	p	class:NetworkManager	access:public	signature:()
+NetworkManager::initClientRecv	network_manager.cpp	/^void NetworkManager::initClientRecv(int check_internal, int recv_thread_count)$/;"	f	class:NetworkManager	signature:(int check_internal, int recv_thread_count)
+NetworkManager::initClientRecv	network_manager.h	/^    void initClientRecv(int check_internal, int recv_thread_count);$/;"	p	class:NetworkManager	access:public	signature:(int check_internal, int recv_thread_count)
+NetworkManager::initSocket	network_manager.cpp	/^bool NetworkManager::initSocket(netaddres_info_t* netaddr, const int& addr_num, const int& wait_time_ms)$/;"	f	class:NetworkManager	signature:(netaddres_info_t* netaddr, const int& addr_num, const int& wait_time_ms)
+NetworkManager::initSocket	network_manager.h	/^    bool initSocket(netaddres_info_t *netaddr, const int& addr_num, const int& wait_time_ms);$/;"	p	class:NetworkManager	access:public	signature:(netaddres_info_t *netaddr, const int& addr_num, const int& wait_time_ms)
+NetworkManager::m_client_connection_handler	network_manager.h	/^    ClientConnectHandler* m_client_connection_handler;$/;"	m	class:NetworkManager	access:private
+NetworkManager::m_client_receiver_handler	network_manager.h	/^    ClientReveiverHandler* m_client_receiver_handler;$/;"	m	class:NetworkManager	access:private
+NetworkManager::m_client_recieve_thread_count	network_manager.h	/^    int m_client_recieve_thread_count;$/;"	m	class:NetworkManager	access:private
+NetworkManager::m_instance	network_manager.h	/^    static NetworkManager* m_instance;$/;"	m	class:NetworkManager	access:private
+NetworkManager::m_queue_size	network_manager.h	/^    int m_queue_size;$/;"	m	class:NetworkManager	access:private
+NetworkManager::m_socket_queue	network_manager.h	/^    ClientSocketQueue* m_socket_queue;$/;"	m	class:NetworkManager	access:private
+NetworkManager::setQueueSize	network_manager.cpp	/^void NetworkManager::setQueueSize(int queue_size)$/;"	f	class:NetworkManager	signature:(int queue_size)
+NetworkManager::setQueueSize	network_manager.h	/^    void setQueueSize(int queue_size);$/;"	p	class:NetworkManager	access:public	signature:(int queue_size)
+NetworkManager::start	network_manager.cpp	/^void NetworkManager::start()$/;"	f	class:NetworkManager	signature:()
+NetworkManager::start	network_manager.h	/^    bool start();$/;"	p	class:NetworkManager	access:public	signature:()
+NetworkManager::waitThreadTermination	network_manager.cpp	/^void NetworkManager::waitThreadTermination()$/;"	f	class:NetworkManager	signature:()
+NetworkManager::waitThreadTermination	network_manager.h	/^    void waitThreadTermination();$/;"	p	class:NetworkManager	access:public	signature:()
+NetworkManager::~NetworkManager	network_manager.cpp	/^NetworkManager::~NetworkManager()$/;"	f	class:NetworkManager	signature:()
+NetworkManager::~NetworkManager	network_manager.h	/^    ~NetworkManager();$/;"	p	class:NetworkManager	access:public	signature:()
+O	.session	/^setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e$/;"	v
+O	.session	/^setlocal indentkeys=0{,0},:,0#,!^F,o,O,e$/;"	v
 O	Session.vim	/^setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e$/;"	v
 O	Session.vim	/^setlocal indentkeys=0{,0},:,0#,!^F,o,O,e$/;"	v
 SOCKET_TUPE_CLIENT	epoll_socket.h	/^    SOCKET_TUPE_CLIENT$/;"	e	enum:SocketType
 SOCKET_TYPE_SERVER	epoll_socket.h	/^    SOCKET_TYPE_SERVER,$/;"	e	enum:SocketType
 SOCKET_TYPE_UNKNOWN	epoll_socket.h	/^    SOCKET_TYPE_UNKNOWN = 0,$/;"	e	enum:SocketType
+STACK_SIZE	common_thread_pool.h	/^    const static int STACK_SIZE = (256*1024);$/;"	m	class:CommonThreadPool	access:private
+SessionLoad	.session	/^let SessionLoad = 1$/;"	v
 SessionLoad	Session.vim	/^let SessionLoad = 1$/;"	v
 SocketAvaiManager	epoll_socket.h	/^    SocketAvaiManager(int index, EpollSocket* epoll_socket_ptr) : m_fd_index(index), m_epoll_socket_ptr(epoll_socket_ptr)$/;"	f	class:SocketAvaiManager	access:public	signature:(int index, EpollSocket* epoll_socket_ptr)
 SocketAvaiManager	epoll_socket.h	/^class SocketAvaiManager$/;"	c
@@ -125,14 +233,13 @@ SocketAvaiManager::operator !=	epoll_socket.h	/^    bool operator != (SocketAvai
 SocketAvaiManager::operator ++	epoll_socket.h	/^    SocketAvaiManager& operator ++ ()$/;"	f	class:SocketAvaiManager	access:public	signature:()
 SocketInfoManager	epoll_socket.h	/^    SocketInfoManager(int index, EpollSocket* epoll_socket_ptr) : m_fd_index(index), m_epoll_socket_ptr(epoll_socket_ptr)$/;"	f	class:SocketInfoManager	access:public	signature:(int index, EpollSocket* epoll_socket_ptr)
 SocketInfoManager	epoll_socket.h	/^class SocketInfoManager$/;"	c
-SocketInfoManager::EpollSocketManager	epoll_socket_manager.cpp	/^SocketInfoManager::EpollSocketManager()$/;"	f	class:SocketInfoManager	signature:()
 SocketInfoManager::SocketInfoManager	epoll_socket.h	/^    SocketInfoManager(int index, EpollSocket* epoll_socket_ptr) : m_fd_index(index), m_epoll_socket_ptr(epoll_socket_ptr)$/;"	f	class:SocketInfoManager	access:public	signature:(int index, EpollSocket* epoll_socket_ptr)
 SocketInfoManager::close	epoll_socket.h	/^    void close()$/;"	f	class:SocketInfoManager	access:public	signature:()
+SocketInfoManager::connTimeoutMs	epoll_socket.h	/^    int connTimeoutMs()$/;"	f	class:SocketInfoManager	access:public	signature:()
 SocketInfoManager::dump	epoll_socket.h	/^    std::string dump()$/;"	f	class:SocketInfoManager	access:public	signature:()
 SocketInfoManager::flushBuffer	epoll_socket.h	/^    void flushBuffer()$/;"	f	class:SocketInfoManager	access:public	signature:()
 SocketInfoManager::getAddr	epoll_socket.h	/^    int getAddr()$/;"	f	class:SocketInfoManager	access:public	signature:()
 SocketInfoManager::getBuffer	epoll_socket.h	/^    std::string& getBuffer()$/;"	f	class:SocketInfoManager	access:public	signature:()
-SocketInfoManager::getInstance	epoll_socket_manager.cpp	/^SocketInfoManager* SocketInfoManager::getInstance()$/;"	f	class:SocketInfoManager	signature:()
 SocketInfoManager::getListenPort	epoll_socket.h	/^    int getListenPort()$/;"	f	class:SocketInfoManager	access:public	signature:()
 SocketInfoManager::getPort	epoll_socket.h	/^    int getPort()$/;"	f	class:SocketInfoManager	access:public	signature:()
 SocketInfoManager::getSocketFd	epoll_socket.h	/^    int getSocketFd()$/;"	f	class:SocketInfoManager	access:public	signature:()
@@ -145,12 +252,20 @@ SocketInfoManager::needRecvBytes	epoll_socket.h	/^    int needRecvBytes()$/;"	f	
 SocketInfoManager::operator !=	epoll_socket.h	/^    bool operator != (SocketInfoManager socket_info_manager)$/;"	f	class:SocketInfoManager	access:public	signature:(SocketInfoManager socket_info_manager)
 SocketInfoManager::operator ++	epoll_socket.h	/^    SocketInfoManager& operator ++ ()$/;"	f	class:SocketInfoManager	access:public	signature:()
 SocketInfoManager::setNeedRecvBytes	epoll_socket.h	/^    void setNeedRecvBytes(int need_bytes)$/;"	f	class:SocketInfoManager	access:public	signature:(int need_bytes)
-SocketInfoManager::~EpollSocketManager	epoll_socket_manager.cpp	/^SocketInfoManager::~EpollSocketManager()$/;"	f	class:SocketInfoManager	signature:()
 SocketType	epoll_socket.h	/^enum SocketType$/;"	g
 TAGS	Session.vim	/^set tags=.\/tags,.\/TAGS,tags,TAGS,\/usr\/include\/c++\/tags$/;"	v
+Utility	common_utility.h	/^class Utility$/;"	c
+Utility::getCurMileSeconds	common_utility.h	/^    static int getCurMileSeconds()$/;"	f	class:Utility	access:public	signature:()
+_	.session	/^setlocal iskeyword=@,48-57,_,192-255$/;"	v
 _	Session.vim	/^setlocal iskeyword=@,48-57,_,192-255$/;"	v
+_CLIENT_CONNECTION_HANDLER_H_	client_connection_handler.h	2;"	d
+_CLIENT_RECEIVER_HANDLER_H_	client_receiver_handler.h	2;"	d
+_COMMON_QUEUE_H_	common_queue.h	2;"	d
+_COMMON_THREAD_POOL_H_	common_thread_pool.h	2;"	d
+_COMMON_UTILITY_H_	common_utility.h	2;"	d
 _EPOLL_SOCKET_H_	epoll_socket.h	2;"	d
 _EPOLL_SOCKET_MANAGER_H_	epoll_socket_manager.h	2;"	d
+_NETWORK_MANAGER_H_	network_manager.h	2;"	d
 _netaddres_info_t	epoll_socket.h	/^typedef struct _netaddres_info_t$/;"	s
 _netaddres_info_t::m_backlog	epoll_socket.h	/^    int m_backlog;$/;"	m	struct:_netaddres_info_t	access:public
 _netaddres_info_t::m_ip_addr	epoll_socket.h	/^    std::string m_ip_addr;$/;"	m	struct:_netaddres_info_t	access:public
@@ -158,6 +273,7 @@ _netaddres_info_t::m_port	epoll_socket.h	/^    int m_port;$/;"	m	struct:_netaddr
 _sock_info_t	epoll_socket.h	/^typedef struct _sock_info_t$/;"	s
 _sock_info_t::m_addr	epoll_socket.h	/^    int m_addr;$/;"	m	struct:_sock_info_t	access:public
 _sock_info_t::m_closed	epoll_socket.h	/^    bool m_closed;$/;"	m	struct:_sock_info_t	access:public
+_sock_info_t::m_conn_timeout_ms	epoll_socket.h	/^    int m_conn_timeout_ms;$/;"	m	struct:_sock_info_t	access:public
 _sock_info_t::m_listen_port	epoll_socket.h	/^    int m_listen_port;$/;"	m	struct:_sock_info_t	access:public
 _sock_info_t::m_need_recv_bytes	epoll_socket.h	/^    int m_need_recv_bytes;$/;"	m	struct:_sock_info_t	access:public
 _sock_info_t::m_port	epoll_socket.h	/^    int m_port;$/;"	m	struct:_sock_info_t	access:public
@@ -165,46 +281,71 @@ _sock_info_t::m_recv_buf	epoll_socket.h	/^    std::string m_recv_buf;$/;"	m	stru
 _sock_info_t::m_time_ms	epoll_socket.h	/^    int m_time_ms;$/;"	m	struct:_sock_info_t	access:public
 _sock_info_t::m_type	epoll_socket.h	/^    int m_type;$/;"	m	struct:_sock_info_t	access:public
 acceptSocket	epoll_socket.h	/^    int acceptSocket(struct sockaddr_in* client_addr)$/;"	f	class:SocketAvaiManager	access:public	signature:(struct sockaddr_in* client_addr)
-add	epoll_socket.cpp	/^bool EpollSocket::add(int sock_fd, int cur_time, int listen_port, int port, int sock_addr, int sock_type)$/;"	f	class:EpollSocket	signature:(int sock_fd, int cur_time, int listen_port, int port, int sock_addr, int sock_type)
+add	epoll_socket.cpp	/^bool EpollSocket::add(int sock_fd, int cur_time, int listen_port, int port, int sock_addr, int conn_timeout_ms, int sock_type)$/;"	f	class:EpollSocket	signature:(int sock_fd, int cur_time, int listen_port, int port, int sock_addr, int conn_timeout_ms, int sock_type)
 add	epoll_socket.h	/^    bool add(int sock_fd, int cur_time, int listen_port, int port, int sock_addr, int sock_type);$/;"	p	class:EpollSocket	access:public	signature:(int sock_fd, int cur_time, int listen_port, int port, int sock_addr, int sock_type)
+addons	.session	/^set runtimepath=~\/.vim,\/var\/lib\/vim\/addons,\/usr\/share\/vim\/vimfiles,\/usr\/share\/vim\/vim74,\/usr\/share\/vim\/vimfiles\/after,\/var\/lib\/vim\/addons\/after,~\/.vim\/after$/;"	v
 addons	Session.vim	/^set runtimepath=~\/.vim,\/var\/lib\/vim\/addons,\/usr\/share\/vim\/vimfiles,\/usr\/share\/vim\/vim74,\/usr\/share\/vim\/vimfiles\/after,\/var\/lib\/vim\/addons\/after,~\/.vim\/after$/;"	v
+after	.session	/^set runtimepath=~\/.vim,\/var\/lib\/vim\/addons,\/usr\/share\/vim\/vimfiles,\/usr\/share\/vim\/vim74,\/usr\/share\/vim\/vimfiles\/after,\/var\/lib\/vim\/addons\/after,~\/.vim\/after$/;"	v
 after	Session.vim	/^set runtimepath=~\/.vim,\/var\/lib\/vim\/addons,\/usr\/share\/vim\/vimfiles,\/usr\/share\/vim\/vim74,\/usr\/share\/vim\/vimfiles\/after,\/var\/lib\/vim\/addons\/after,~\/.vim\/after$/;"	v
 available	epoll_socket.h	/^    bool available()$/;"	f	class:SocketAvaiManager	access:public	signature:()
+b	.session	/^setlocal complete=.,w,b,u,t,i$/;"	v
 b	Session.vim	/^setlocal complete=.,w,b,u,t,i$/;"	v
 bindPort	epoll_socket.cpp	/^bool EpollSocket::bindPort()$/;"	f	class:EpollSocket	signature:()
 bindPort	epoll_socket.h	/^    bool bindPort();$/;"	p	class:EpollSocket	access:public	signature:()
+checkTimeout	client_connection_handler.cpp	/^void ClientConnectionHandler::checkTimeout()$/;"	f	class:ClientConnectionHandler	signature:()
+checkTimeout	client_connection_handler.h	/^    void checkTimeout();$/;"	p	class:ClientConnectionHandler	access:private	signature:()
+cinoptions	.session	/^setlocal cinoptions=$/;"	v
 cinoptions	Session.vim	/^setlocal cinoptions=$/;"	v
 close	epoll_socket.h	/^    void close()$/;"	f	class:SocketAvaiManager	access:public	signature:()
 close	epoll_socket.h	/^    void close()$/;"	f	class:SocketInfoManager	access:public	signature:()
-closeSocket	epoll_socket_manager.cpp	/^bool EpollSocketManager::closeSocket(int sock_fd)$/;"	f	class:EpollSocketManager	signature:(int sock_fd)
+closeSocket	epoll_socket_manager.cpp	/^void EpollSocketManager::closeSocket(int sock_fd)$/;"	f	class:EpollSocketManager	signature:(int sock_fd)
 closeSocket	epoll_socket_manager.h	/^    void closeSocket(int sock_fd);$/;"	p	class:EpollSocketManager	access:public	signature:(int sock_fd)
+colorcolumn	.session	/^setlocal colorcolumn=$/;"	v
 colorcolumn	Session.vim	/^setlocal colorcolumn=$/;"	v
+commentstring	.session	/^setlocal commentstring=\/*%s*\/$/;"	v
 commentstring	Session.vim	/^setlocal commentstring=\/*%s*\/$/;"	v
 completeopt	Session.vim	/^set completeopt=menuone,menu,longest$/;"	v
+concealcursor	.session	/^setlocal concealcursor=$/;"	v
 concealcursor	Session.vim	/^setlocal concealcursor=$/;"	v
-count	epoll_socket.cpp	/^bool EpollSocket::count()$/;"	f	class:EpollSocket	signature:()
+connTimeoutMs	epoll_socket.h	/^    int connTimeoutMs()$/;"	f	class:SocketInfoManager	access:public	signature:()
+count	epoll_socket.cpp	/^int EpollSocket::count()$/;"	f	class:EpollSocket	signature:()
 count	epoll_socket.h	/^    int count();$/;"	p	class:EpollSocket	access:public	signature:()
 count	epoll_socket_manager.cpp	/^int EpollSocketManager::count()$/;"	f	class:EpollSocketManager	signature:()
 count	epoll_socket_manager.h	/^    int count();$/;"	p	class:EpollSocketManager	access:public	signature:()
+cscopequickfix	.session	/^set cscopequickfix=s-,c-,d-,i-,t-,e-$/;"	v
 cscopequickfix	Session.vim	/^set cscopequickfix=s-,c-,d-,i-,t-,e-$/;"	v
+destroyThreadId	common_thread_pool.cpp	/^void CommonThreadPool::destroyThreadId()$/;"	f	class:CommonThreadPool	signature:()
+destroyThreadId	common_thread_pool.h	/^    void destroyThreadId();$/;"	p	class:CommonThreadPool	access:public	signature:()
+detachThreads	common_thread_pool.cpp	/^void CommonThreadPool::detachThreads()$/;"	f	class:CommonThreadPool	signature:()
+detachThreads	common_thread_pool.h	/^    void detachThreads();$/;"	p	class:CommonThreadPool	access:public	signature:()
 dump	epoll_socket.h	/^    std::string dump()$/;"	f	class:SocketInfoManager	access:public	signature:()
+eol	.session	/^set backspace=indent,eol,start$/;"	v
 eol	Session.vim	/^set backspace=indent,eol,start$/;"	v
 flushBuffer	epoll_socket.h	/^    void flushBuffer()$/;"	f	class:SocketInfoManager	access:public	signature:()
+foldlevelstart	.session	/^set foldlevelstart=99$/;"	v
 foldlevelstart	Session.vim	/^set foldlevelstart=99$/;"	v
 format	tags	/^!_TAG_FILE_FORMAT	2	\/extended format; --format=1 will not append ;" to lines\/$/;"	v
+getAbsTimeout	common_queue.h	/^    void getAbsTimeout(int timeout_ms, struct timespec& timeout)$/;"	f	class:CommonQueue	access:private	signature:(int timeout_ms, struct timespec& timeout)
 getAddr	epoll_socket.cpp	/^int EpollSocket::getAddr(int sock_fd)$/;"	f	class:EpollSocket	signature:(int sock_fd)
 getAddr	epoll_socket.h	/^    int getAddr()$/;"	f	class:SocketAvaiManager	access:public	signature:()
 getAddr	epoll_socket.h	/^    int getAddr()$/;"	f	class:SocketInfoManager	access:public	signature:()
 getAddr	epoll_socket.h	/^    int getAddr(int sock_fd);$/;"	p	class:EpollSocket	access:protected	signature:(int sock_fd)
 getBuffer	epoll_socket.h	/^    std::string& getBuffer()$/;"	f	class:SocketInfoManager	access:public	signature:()
-getInstance	epoll_socket_manager.cpp	/^SocketInfoManager* SocketInfoManager::getInstance()$/;"	f	class:SocketInfoManager	signature:()
+getCapacity	common_queue.h	/^    int getCapacity()$/;"	f	class:CommonQueue	access:public	signature:()
+getCurMileSeconds	common_utility.h	/^    static int getCurMileSeconds()$/;"	f	class:Utility	access:public	signature:()
+getInstance	epoll_socket_manager.cpp	/^EpollSocketManager* EpollSocketManager::getInstance()$/;"	f	class:EpollSocketManager	signature:()
 getInstance	epoll_socket_manager.h	/^    static EpollSocketManager* getInstance();$/;"	p	class:EpollSocketManager	access:public	signature:()
+getInstance	network_manager.cpp	/^NetworkManager* NetworkManager::getInstance()$/;"	f	class:NetworkManager	signature:()
+getInstance	network_manager.h	/^    static NetworkManager* getInstance();$/;"	p	class:NetworkManager	access:public	signature:()
 getListenPort	epoll_socket.h	/^    int getListenPort()$/;"	f	class:SocketAvaiManager	access:public	signature:()
 getListenPort	epoll_socket.h	/^    int getListenPort()$/;"	f	class:SocketInfoManager	access:public	signature:()
+getMaxSize	common_queue.h	/^    int getMaxSize()$/;"	f	class:CommonQueue	access:public	signature:()
+getPoolSize	common_thread_pool.h	/^    inline int getPoolSize()$/;"	f	class:CommonThreadPool	access:public	signature:()
 getPort	epoll_socket.cpp	/^int EpollSocket::getPort(int sock_fd)$/;"	f	class:EpollSocket	signature:(int sock_fd)
 getPort	epoll_socket.h	/^    int getPort()$/;"	f	class:SocketAvaiManager	access:public	signature:()
 getPort	epoll_socket.h	/^    int getPort()$/;"	f	class:SocketInfoManager	access:public	signature:()
 getPort	epoll_socket.h	/^    int getPort(int sock_fd);$/;"	p	class:EpollSocket	access:protected	signature:(int sock_fd)
+getSize	common_queue.h	/^    int getSize()$/;"	f	class:CommonQueue	access:public	signature:()
 getSocketCount	epoll_socket.cpp	/^int EpollSocket::getSocketCount()$/;"	f	class:EpollSocket	signature:()
 getSocketCount	epoll_socket.h	/^    int getSocketCount();$/;"	p	class:EpollSocket	access:public	signature:()
 getSocketFd	epoll_socket.h	/^    int getSocketFd()$/;"	f	class:SocketAvaiManager	access:public	signature:()
@@ -213,105 +354,174 @@ getSocketInfo	epoll_socket_manager.cpp	/^SocketInfoManager EpollSocketManager::g
 getSocketInfo	epoll_socket_manager.h	/^    SocketInfoManager getSocketInfo(int sock_fd);$/;"	p	class:EpollSocketManager	access:public	signature:(int sock_fd)
 getTime	epoll_socket.cpp	/^int EpollSocket::getTime(int sock_fd)$/;"	f	class:EpollSocket	signature:(int sock_fd)
 getTime	epoll_socket.h	/^    int getTime(int socket_fd);$/;"	p	class:EpollSocket	access:public	signature:(int socket_fd)
-get_conn_socket_count	epoll_socket_manager.cpp	/^int EpollSocketManager::get_conn_socket_count()$/;"	f	class:EpollSocketManager	signature:()
-get_conn_socket_count	epoll_socket_manager.h	/^    int get_conn_socket_count();$/;"	p	class:EpollSocketManager	access:public	signature:()
-hA	test	/^ELF/;"	v
-i	test	/^ELF/;"	v
 inUsed	epoll_socket.h	/^    bool inUsed()$/;"	f	class:SocketAvaiManager	access:public	signature:()
 inUsed	epoll_socket.h	/^    bool inUsed()$/;"	f	class:SocketInfoManager	access:public	signature:()
+init	common_queue.h	/^    bool init(int capacity)$/;"	f	class:CommonQueue	access:public	signature:(int capacity)
 init	epoll_socket.cpp	/^void EpollSocket::init(netaddres_info_t *netaddr, const int& addr_num, const int& wait_time_ms)$/;"	f	class:EpollSocket	signature:(netaddres_info_t *netaddr, const int& addr_num, const int& wait_time_ms)
 init	epoll_socket.h	/^    void init(netaddres_info_t *netaddr, const int& addr_num, const int& wait_time_ms);$/;"	p	class:EpollSocket	access:public	signature:(netaddres_info_t *netaddr, const int& addr_num, const int& wait_time_ms)
+initClientRecv	network_manager.cpp	/^void NetworkManager::initClientRecv(int check_internal, int recv_thread_count)$/;"	f	class:NetworkManager	signature:(int check_internal, int recv_thread_count)
+initClientRecv	network_manager.h	/^    void initClientRecv(int check_internal, int recv_thread_count);$/;"	p	class:NetworkManager	access:public	signature:(int check_internal, int recv_thread_count)
+initQueues	client_connection_handler.cpp	/^void ClientConnectionHandler::initQueues(ClientSocketQueue* recv_sock_q)$/;"	f	class:ClientConnectionHandler	signature:(ClientSocketQueue* recv_sock_q)
+initQueues	client_connection_handler.h	/^    void initQueues(ClientSocketQueue*);$/;"	p	class:ClientConnectionHandler	access:public	signature:(ClientSocketQueue*)
+initQueues	client_receiver_handler.h	/^    void initQueues(ClientSocketQueue *socket_queue, MessageQueue* message_queue);$/;"	p	class:ClientReceiverHandler	access:public	signature:(ClientSocketQueue *socket_queue, MessageQueue* message_queue)
 initSocket	epoll_socket_manager.cpp	/^bool EpollSocketManager::initSocket(netaddres_info_t *netaddr, const int& addr_num, const int& wait_time_ms)$/;"	f	class:EpollSocketManager	signature:(netaddres_info_t *netaddr, const int& addr_num, const int& wait_time_ms)
-initSocket	epoll_socket_manager.h	/^    bool initSocket(netaddres_into_t *netaddr, const int& addr_num, const int& wait_time_ms);$/;"	p	class:EpollSocketManager	access:public	signature:(netaddres_into_t *netaddr, const int& addr_num, const int& wait_time_ms)
+initSocket	epoll_socket_manager.h	/^    bool initSocket(netaddres_info_t *netaddr, const int& addr_num, const int& wait_time_ms);$/;"	p	class:EpollSocketManager	access:public	signature:(netaddres_info_t *netaddr, const int& addr_num, const int& wait_time_ms)
+initSocket	network_manager.cpp	/^bool NetworkManager::initSocket(netaddres_info_t* netaddr, const int& addr_num, const int& wait_time_ms)$/;"	f	class:NetworkManager	signature:(netaddres_info_t* netaddr, const int& addr_num, const int& wait_time_ms)
+initSocket	network_manager.h	/^    bool initSocket(netaddres_info_t *netaddr, const int& addr_num, const int& wait_time_ms);$/;"	p	class:NetworkManager	access:public	signature:(netaddres_info_t *netaddr, const int& addr_num, const int& wait_time_ms)
 isListener	epoll_socket.h	/^    bool isListener()$/;"	f	class:SocketAvaiManager	access:public	signature:()
 isListener	epoll_socket.h	/^    bool isListener()$/;"	f	class:SocketInfoManager	access:public	signature:()
 isOk	epoll_socket.h	/^    bool isOk()$/;"	f	class:SocketAvaiManager	access:public	signature:()
 isOk	epoll_socket.h	/^    bool isOk()$/;"	f	class:SocketInfoManager	access:public	signature:()
 isWritable	epoll_socket.h	/^    bool isWritable()$/;"	f	class:SocketAvaiManager	access:public	signature:()
+iskeyword	.session	/^setlocal iskeyword=@,48-57,_,192-255$/;"	v
 iskeyword	Session.vim	/^setlocal iskeyword=@,48-57,_,192-255$/;"	v
 listenPort	epoll_socket.cpp	/^bool EpollSocket::listenPort()$/;"	f	class:EpollSocket	signature:()
 listenPort	epoll_socket.h	/^    bool listenPort();$/;"	p	class:EpollSocket	access:public	signature:()
 m_addr	epoll_socket.h	/^    int m_addr;$/;"	m	struct:_sock_info_t	access:public
 m_available_socket_num	epoll_socket.h	/^    int m_available_socket_num;$/;"	m	class:EpollSocket	access:private
 m_backlog	epoll_socket.h	/^    int m_backlog;$/;"	m	struct:_netaddres_info_t	access:public
+m_capacity	common_queue.h	/^    int m_capacity;$/;"	m	class:CommonQueue	access:private
+m_check_internal	client_connection_handler.h	/^    int m_check_internal;$/;"	m	class:ClientConnectionHandler	access:private
+m_client_connection_handler	network_manager.h	/^    ClientConnectHandler* m_client_connection_handler;$/;"	m	class:NetworkManager	access:private
+m_client_receiver_handler	network_manager.h	/^    ClientReveiverHandler* m_client_receiver_handler;$/;"	m	class:NetworkManager	access:private
+m_client_recieve_thread_count	network_manager.h	/^    int m_client_recieve_thread_count;$/;"	m	class:NetworkManager	access:private
 m_closed	epoll_socket.h	/^    bool m_closed;$/;"	m	struct:_sock_info_t	access:public
+m_cond_not_empty	common_queue.h	/^    pthread_cond_t m_cond_not_empty;$/;"	m	class:CommonQueue	access:private
+m_cond_not_full	common_queue.h	/^    pthread_cond_t m_cond_not_full;$/;"	m	class:CommonQueue	access:private
+m_conn_timeout_ms	epoll_socket.h	/^    int m_conn_timeout_ms;$/;"	m	struct:_sock_info_t	access:public
+m_cur_time	client_connection_handler.h	/^    int m_cur_time;$/;"	m	class:ClientConnectionHandler	access:private
 m_epoll_fd	epoll_socket.h	/^    int m_epoll_fd;$/;"	m	class:EpollSocket	access:private
 m_epoll_socket	epoll_socket_manager.h	/^    EpollSocket m_epoll_socket;$/;"	m	class:EpollSocketManager	access:private
-m_epoll_socket_manager_instance	epoll_socket_manager.cpp	/^EpollSocketManager *m_epoll_socket_manager_instance = new EpollSocketManager();$/;"	v
+m_epoll_socket_manager_instance	epoll_socket_manager.cpp	/^EpollSocketManager* EpollSocketManager::m_epoll_socket_manager_instance = new EpollSocketManager();$/;"	m	class:EpollSocketManager	file:
 m_epoll_socket_manager_instance	epoll_socket_manager.h	/^    static EpollSocketManager* m_epoll_socket_manager_instance;$/;"	m	class:EpollSocketManager	access:private
 m_epoll_socket_ptr	epoll_socket.h	/^    EpollSocket* m_epoll_socket_ptr;$/;"	m	class:SocketAvaiManager	access:private
 m_epoll_socket_ptr	epoll_socket.h	/^    EpollSocket* m_epoll_socket_ptr;$/;"	m	class:SocketInfoManager	access:private
 m_events	epoll_socket.h	/^    struct epoll_event m_events[EVENTS_SIZE];$/;"	m	class:EpollSocket	typeref:struct:EpollSocket::epoll_event	access:private
 m_fd_index	epoll_socket.h	/^    int m_fd_index;$/;"	m	class:SocketAvaiManager	access:private
 m_fd_index	epoll_socket.h	/^    int m_fd_index;$/;"	m	class:SocketInfoManager	access:private
+m_instance	network_manager.h	/^    static NetworkManager* m_instance;$/;"	m	class:NetworkManager	access:private
 m_ip_addr	epoll_socket.h	/^    std::string m_ip_addr;$/;"	m	struct:_netaddres_info_t	access:public
+m_last_check_point	client_connection_handler.h	/^    int m_last_check_point;$/;"	m	class:ClientConnectionHandler	access:private
 m_listen_num	epoll_socket.h	/^    int m_listen_num;$/;"	m	class:EpollSocket	access:private
 m_listen_port	epoll_socket.h	/^    int m_listen_port;$/;"	m	struct:_sock_info_t	access:public
+m_max_size	common_queue.h	/^    int m_max_size;$/;"	m	class:CommonQueue	access:private
+m_mutex	common_queue.h	/^    pthread_mutex_t m_mutex;$/;"	m	class:CommonQueue	access:private
 m_mutex	epoll_socket.h	/^    pthread_mutex_t m_mutex;$/;"	m	class:EpollSocket	access:private
 m_need_recv_bytes	epoll_socket.h	/^    int m_need_recv_bytes;$/;"	m	struct:_sock_info_t	access:public
 m_net_addr	epoll_socket.h	/^    netaddres_info_t *m_net_addr;$/;"	m	class:EpollSocket	access:private
+m_pool_size	common_thread_pool.h	/^    int m_pool_size;$/;"	m	class:CommonThreadPool	access:private
 m_port	epoll_socket.h	/^    int m_port;$/;"	m	struct:_netaddres_info_t	access:public
 m_port	epoll_socket.h	/^    int m_port;$/;"	m	struct:_sock_info_t	access:public
+m_push_queue_fail	client_receiver_handler.h	/^    int m_push_queue_fail;$/;"	m	class:ClientReceiverHandler	access:private
+m_push_queue_succ	client_receiver_handler.h	/^    int m_push_queue_succ;$/;"	m	class:ClientReceiverHandler	access:private
+m_queue	common_queue.h	/^    std::queue<T> m_queue;$/;"	m	class:CommonQueue	access:private
+m_queue_size	network_manager.h	/^    int m_queue_size;$/;"	m	class:NetworkManager	access:private
 m_recv_buf	epoll_socket.h	/^    std::string m_recv_buf;$/;"	m	struct:_sock_info_t	access:public
+m_recv_message_num	client_receiver_handler.h	/^    int m_recv_message_num;$/;"	m	class:ClientReceiverHandler	access:private
+m_recv_sock_q	client_connection_handler.h	/^    ClientSocketQueue* m_recv_sock_q;$/;"	m	class:ClientConnectionHandler	access:private
 m_socket	epoll_socket.h	/^    int *m_socket;$/;"	m	class:EpollSocket	access:private
 m_socket_fd	epoll_socket.h	/^    int m_socket_fd;$/;"	m	class:SocketAvaiManager	access:private
 m_socket_info	epoll_socket.h	/^    sock_info_t m_socket_info[EPOLL_SIZE];$/;"	m	class:EpollSocket	access:private
 m_socket_num	epoll_socket.h	/^    int m_socket_num;$/;"	m	class:EpollSocket	access:private
+m_socket_queue	network_manager.h	/^    ClientSocketQueue* m_socket_queue;$/;"	m	class:NetworkManager	access:private
+m_thread_ids	common_thread_pool.h	/^    pthread_t *m_thread_ids;$/;"	m	class:CommonThreadPool	access:private
 m_time_ms	epoll_socket.h	/^    int m_time_ms;$/;"	m	struct:_sock_info_t	access:public
 m_type	epoll_socket.h	/^    int m_type;$/;"	m	struct:_sock_info_t	access:public
 m_wait_time_ms	epoll_socket.h	/^    int m_wait_time_ms;$/;"	m	class:EpollSocket	access:private
 main	test.cpp	/^int main(int argc, char *argv[])$/;"	f	signature:(int argc, char *argv[])
 menu	Session.vim	/^set completeopt=menuone,menu,longest$/;"	v
+message_queue	client_receiver_handler.h	/^    MessageQueue* message_queue;$/;"	m	class:ClientReceiverHandler	access:private
 needRecvBytes	epoll_socket.h	/^    int needRecvBytes()$/;"	f	class:SocketInfoManager	access:public	signature:()
 netaddres_info_t	epoll_socket.h	/^}netaddres_info_t;$/;"	t	typeref:struct:_netaddres_info_t
+nrformats	.session	/^setlocal nrformats=octal,hex$/;"	v
 nrformats	Session.vim	/^setlocal nrformats=octal,hex$/;"	v
 numberwidth	Session.vim	/^setlocal numberwidth=4$/;"	v
+o	.session	/^setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e$/;"	v
+o	.session	/^setlocal indentkeys=0{,0},:,0#,!^F,o,O,e$/;"	v
 o	Session.vim	/^setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e$/;"	v
 o	Session.vim	/^setlocal indentkeys=0{,0},:,0#,!^F,o,O,e$/;"	v
 operator !=	epoll_socket.h	/^    bool operator != (SocketAvaiManager socket_avai_manager)$/;"	f	class:SocketAvaiManager	access:public	signature:(SocketAvaiManager socket_avai_manager)
 operator !=	epoll_socket.h	/^    bool operator != (SocketInfoManager socket_info_manager)$/;"	f	class:SocketInfoManager	access:public	signature:(SocketInfoManager socket_info_manager)
 operator ++	epoll_socket.h	/^    SocketAvaiManager& operator ++ ()$/;"	f	class:SocketAvaiManager	access:public	signature:()
 operator ++	epoll_socket.h	/^    SocketInfoManager& operator ++ ()$/;"	f	class:SocketInfoManager	access:public	signature:()
-putIntoEpoll	epoll_socket_manager.cpp	/^bool EpollSocketManager::putIntoEpoll(int fd, int cur_time,  int listen_port, int client_port, int ip_addr, int sock_type)$/;"	f	class:EpollSocketManager	signature:(int fd, int cur_time, int listen_port, int client_port, int ip_addr, int sock_type)
-putIntoEpoll	epoll_socket_manager.h	/^    bool putIntoEpoll(int fd, int cur_time, int listen_port, int client_port, int ip_addr, int sock_type);$/;"	p	class:EpollSocketManager	access:public	signature:(int fd, int cur_time, int listen_port, int client_port, int ip_addr, int sock_type)
-remove	epoll_socket_manager.cpp	/^bool EpollSocketManager::remove(int sock_fd)$/;"	f	class:EpollSocketManager	signature:(int sock_fd)
-remove	epoll_socket_manager.h	/^    bool remove(int sock_fd);$/;"	p	class:EpollSocketManager	access:public	signature:(int sock_fd)
+pop	common_queue.h	/^    bool pop(T& retVal)$/;"	f	class:CommonQueue	access:public	signature:(T& retVal)
+pop	common_queue.h	/^    bool pop(T& retVal, int wait_ms)$/;"	f	class:CommonQueue	access:public	signature:(T& retVal, int wait_ms)
+processConnection	client_connection_handler.cpp	/^void ClientConnectionHandler::processConnection(int new_fd, int listen_port, int ip_addr, int client_port, int conn_timeout_ms)$/;"	f	class:ClientConnectionHandler	signature:(int new_fd, int listen_port, int ip_addr, int client_port, int conn_timeout_ms)
+processConnection	client_connection_handler.h	/^    void processConnection($/;"	p	class:ClientConnectionHandler	access:private	signature:( int new_fd, int listen_port, int ip_addr, int client_port, int conn_timeout_ms)
+push	common_queue.h	/^    bool push(const T& element)$/;"	f	class:CommonQueue	access:public	signature:(const T& element)
+push	common_queue.h	/^    bool push(const T& element, int wait_ms)$/;"	f	class:CommonQueue	access:public	signature:(const T& element, int wait_ms)
+putIntoEpoll	epoll_socket_manager.cpp	/^bool EpollSocketManager::putIntoEpoll(int fd, int cur_time,  int listen_port, int client_port, int ip_addr, int conn_timeout_ms, int sock_type)$/;"	f	class:EpollSocketManager	signature:(int fd, int cur_time, int listen_port, int client_port, int ip_addr, int conn_timeout_ms, int sock_type)
+putIntoEpoll	epoll_socket_manager.h	/^    bool putIntoEpoll(int fd, int cur_time, int listen_port, int client_port, int ip_addr, int conn_timeout_ms, int sock_type = SOCKET_TYPE_CLIENT);$/;"	p	class:EpollSocketManager	access:public	signature:(int fd, int cur_time, int listen_port, int client_port, int ip_addr, int conn_timeout_ms, int sock_type = SOCKET_TYPE_CLIENT)
+recvCmd	client_receiver_handler.h	/^    int recvCmd(SocketInfoManager& socket_info);$/;"	p	class:ClientReceiverHandler	access:public	signature:(SocketInfoManager& socket_info)
+recvData	client_receiver_handler.h	/^    int recvData($/;"	p	class:ClientReceiverHandler	access:public	signature:( int sock_fd, char *recv_buffer, const int need_recv_bytes, int& real_recv_len)
 removeSocket	epoll_socket.cpp	/^bool EpollSocket::removeSocket(int sock_fd)$/;"	f	class:EpollSocket	signature:(int sock_fd)
 removeSocket	epoll_socket.h	/^    bool removeSocket(int sock_fd);$/;"	p	class:EpollSocket	access:public	signature:(int sock_fd)
+removeSocket	epoll_socket_manager.cpp	/^bool EpollSocketManager::removeSocket(int sock_fd)$/;"	f	class:EpollSocketManager	signature:(int sock_fd)
+removeSocket	epoll_socket_manager.h	/^    bool removeSocket(int sock_fd);$/;"	p	class:EpollSocketManager	access:public	signature:(int sock_fd)
 setNeedRecvBytes	epoll_socket.h	/^    void setNeedRecvBytes(int need_bytes)$/;"	f	class:SocketInfoManager	access:public	signature:(int need_bytes)
 setNonblock	epoll_socket.cpp	/^bool EpollSocket::setNonblock(int& sock_fd)$/;"	f	class:EpollSocket	signature:(int& sock_fd)
 setNonblock	epoll_socket.h	/^    bool setNonblock(int& sock_fd);$/;"	p	class:EpollSocket	access:public	signature:(int& sock_fd)
+setQueueSize	network_manager.cpp	/^void NetworkManager::setQueueSize(int queue_size)$/;"	f	class:NetworkManager	signature:(int queue_size)
+setQueueSize	network_manager.h	/^    void setQueueSize(int queue_size);$/;"	p	class:NetworkManager	access:public	signature:(int queue_size)
 so_save	Session.vim	/^let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0$/;"	v
 sock_info_t	epoll_socket.h	/^}sock_info_t;$/;"	t	typeref:struct:_sock_info_t
 socketAvaiBegin	epoll_socket.cpp	/^SocketAvaiManager EpollSocket::socketAvaiBegin()$/;"	f	class:EpollSocket	signature:()
 socketAvaiBegin	epoll_socket.h	/^    SocketAvaiManager socketAvaiBegin();$/;"	p	class:EpollSocket	access:public	signature:()
 socketAvaiBegin	epoll_socket_manager.cpp	/^SocketAvaiManager EpollSocketManager::socketAvaiBegin()$/;"	f	class:EpollSocketManager	signature:()
+socketAvaiBegin	epoll_socket_manager.h	/^    SocketAvaiManager socketAvaiBegin();$/;"	p	class:EpollSocketManager	access:public	signature:()
 socketAvaiEnd	epoll_socket.cpp	/^SocketAvaiManager EpollSocket::socketAvaiEnd()$/;"	f	class:EpollSocket	signature:()
 socketAvaiEnd	epoll_socket.h	/^    SocketAvaiManager socketAvaiEnd();$/;"	p	class:EpollSocket	access:public	signature:()
 socketAvaiEnd	epoll_socket_manager.cpp	/^SocketAvaiManager EpollSocketManager::socketAvaiEnd()$/;"	f	class:EpollSocketManager	signature:()
-socketAvailBegin	epoll_socket_manager.h	/^    SocketAvaiManager socketAvailBegin();$/;"	p	class:EpollSocketManager	access:public	signature:()
-socketAvailEnd	epoll_socket_manager.h	/^    SocketAvaiManager socketAvailEnd();$/;"	p	class:EpollSocketManager	access:public	signature:()
+socketAvaiEnd	epoll_socket_manager.h	/^    SocketAvaiManager socketAvaiEnd();$/;"	p	class:EpollSocketManager	access:public	signature:()
 socketInfo	epoll_socket.cpp	/^SocketInfoManager EpollSocket::socketInfo(int sock_fd)$/;"	f	class:EpollSocket	signature:(int sock_fd)
 socketInfo	epoll_socket.h	/^    SocketInfoManager socketInfo(int sock_fd);$/;"	p	class:EpollSocket	access:public	signature:(int sock_fd)
 socketInfoBegin	epoll_socket.cpp	/^SocketInfoManager EpollSocket::socketInfoBegin()$/;"	f	class:EpollSocket	signature:()
 socketInfoBegin	epoll_socket.h	/^    SocketInfoManager socketInfoBegin();$/;"	p	class:EpollSocket	access:public	signature:()
-socketInfoBegin	epoll_socket_manager.cpp	/^socketInfoManager EpollSocketManager::socketInfoBegin()$/;"	f	class:EpollSocketManager	signature:()
+socketInfoBegin	epoll_socket_manager.cpp	/^SocketInfoManager EpollSocketManager::socketInfoBegin()$/;"	f	class:EpollSocketManager	signature:()
 socketInfoBegin	epoll_socket_manager.h	/^    SocketInfoManager socketInfoBegin();$/;"	p	class:EpollSocketManager	access:public	signature:()
 socketInfoEnd	epoll_socket.cpp	/^SocketInfoManager EpollSocket::socketInfoEnd()$/;"	f	class:EpollSocket	signature:()
 socketInfoEnd	epoll_socket.h	/^    SocketInfoManager socketInfoEnd();$/;"	p	class:EpollSocket	access:public	signature:()
-socketInfoEnd	epoll_socket_manager.cpp	/^socketInfoManager EpollSocketManager::socketInfoEnd()$/;"	f	class:EpollSocketManager	signature:()
+socketInfoEnd	epoll_socket_manager.cpp	/^SocketInfoManager EpollSocketManager::socketInfoEnd()$/;"	f	class:EpollSocketManager	signature:()
 socketInfoEnd	epoll_socket_manager.h	/^    SocketInfoManager socketInfoEnd();$/;"	p	class:EpollSocketManager	access:public	signature:()
+socket_queue	client_receiver_handler.h	/^    ClientSocketQueue* socket_queue;$/;"	m	class:ClientReceiverHandler	access:private
+start	network_manager.cpp	/^void NetworkManager::start()$/;"	f	class:NetworkManager	signature:()
+start	network_manager.h	/^    bool start();$/;"	p	class:NetworkManager	access:public	signature:()
+startThreads	common_thread_pool.cpp	/^bool CommonThreadPoll::startThreads()$/;"	f	class:CommonThreadPoll	signature:()
+startThreads	common_thread_pool.h	/^    bool startThreads();$/;"	p	class:CommonThreadPool	access:public	signature:()
+t	.session	/^setlocal complete=.,w,b,u,t,i$/;"	v
 t	Session.vim	/^setlocal complete=.,w,b,u,t,i$/;"	v
 tags	Session.vim	/^set tags=.\/tags,.\/TAGS,tags,TAGS,\/usr\/include\/c++\/tags$/;"	v
+threadProc	common_thread_pool.cpp	/^void *CommonThreadPool::threadProc(void *para)$/;"	f	class:CommonThreadPool	signature:(void *para)
+threadProc	common_thread_pool.h	/^    static void* threadProc(void* para);$/;"	p	class:CommonThreadPool	access:private	signature:(void* para)
+timeout	epoll_socket_manager.cpp	/^bool EpollSocketManager::timeout(int cur_time_ms)$/;"	f	class:EpollSocketManager	signature:(int cur_time_ms)
+timeout	epoll_socket_manager.h	/^    bool timeout(int cur_time_ms);$/;"	p	class:EpollSocketManager	access:public	signature:(int cur_time_ms)
+u	.session	/^setlocal complete=.,w,b,u,t,i$/;"	v
 u	Session.vim	/^setlocal complete=.,w,b,u,t,i$/;"	v
+vim74	.session	/^set runtimepath=~\/.vim,\/var\/lib\/vim\/addons,\/usr\/share\/vim\/vimfiles,\/usr\/share\/vim\/vim74,\/usr\/share\/vim\/vimfiles\/after,\/var\/lib\/vim\/addons\/after,~\/.vim\/after$/;"	v
 vim74	Session.vim	/^set runtimepath=~\/.vim,\/var\/lib\/vim\/addons,\/usr\/share\/vim\/vimfiles,\/usr\/share\/vim\/vim74,\/usr\/share\/vim\/vimfiles\/after,\/var\/lib\/vim\/addons\/after,~\/.vim\/after$/;"	v
+vimfiles	.session	/^set runtimepath=~\/.vim,\/var\/lib\/vim\/addons,\/usr\/share\/vim\/vimfiles,\/usr\/share\/vim\/vim74,\/usr\/share\/vim\/vimfiles\/after,\/var\/lib\/vim\/addons\/after,~\/.vim\/after$/;"	v
 vimfiles	Session.vim	/^set runtimepath=~\/.vim,\/var\/lib\/vim\/addons,\/usr\/share\/vim\/vimfiles,\/usr\/share\/vim\/vim74,\/usr\/share\/vim\/vimfiles\/after,\/var\/lib\/vim\/addons\/after,~\/.vim\/after$/;"	v
+w	.session	/^setlocal complete=.,w,b,u,t,i$/;"	v
 w	Session.vim	/^setlocal complete=.,w,b,u,t,i$/;"	v
 waitAvailableSocket	epoll_socket.cpp	/^int EpollSocket::waitAvailableSocket()$/;"	f	class:EpollSocket	signature:()
 waitAvailableSocket	epoll_socket.h	/^    int waitAvailableSocket();$/;"	p	class:EpollSocket	access:public	signature:()
 waitAvailableSocket	epoll_socket_manager.cpp	/^int EpollSocketManager::waitAvailableSocket()$/;"	f	class:EpollSocketManager	signature:()
 waitAvailableSocket	epoll_socket_manager.h	/^    int waitAvailableSocket();$/;"	p	class:EpollSocketManager	access:public	signature:()
+waitThreadTermination	network_manager.cpp	/^void NetworkManager::waitThreadTermination()$/;"	f	class:NetworkManager	signature:()
+waitThreadTermination	network_manager.h	/^    void waitThreadTermination();$/;"	p	class:NetworkManager	access:public	signature:()
+waitThreadsTermination	common_thread_pool.cpp	/^void CommonThreadPool::waitThreadsTermination()$/;"	f	class:CommonThreadPool	signature:()
+waitThreadsTermination	common_thread_pool.h	/^    void waitThreadsTermination();$/;"	p	class:CommonThreadPool	access:public	signature:()
+work	client_connection_handler.cpp	/^void ClientConnectionHandler::work()$/;"	f	class:ClientConnectionHandler	signature:()
+work	client_connection_handler.h	/^    virtual void work();$/;"	p	class:ClientConnectionHandler	access:protected	signature:()
+work	client_receiver_handler.h	/^    virtual void work();$/;"	p	class:ClientReceiverHandler	access:protected	signature:()
+work	common_thread_pool.h	/^    virtual void work() = 0;$/;"	p	class:CommonThreadPool	access:protected	signature:()
+~ClientConnectionHandler	client_connection_handler.cpp	/^ClientConnectionHandler::~ClientConnectionHandler()$/;"	f	class:ClientConnectionHandler	signature:()
+~ClientConnectionHandler	client_connection_handler.h	/^    virtual ~ClientConnectionHandler();$/;"	p	class:ClientConnectionHandler	access:public	signature:()
+~CommonQueue	common_queue.h	/^    virtual ~CommonQueue()$/;"	f	class:CommonQueue	access:public	signature:()
+~CommonThreadPool	common_thread_pool.h	/^    virtual ~CommonThreadPool()$/;"	f	class:CommonThreadPool	access:public	signature:()
 ~EpollSocket	epoll_socket.cpp	/^EpollSocket::~EpollSocket()$/;"	f	class:EpollSocket	signature:()
 ~EpollSocket	epoll_socket.h	/^    ~EpollSocket();$/;"	p	class:EpollSocket	access:public	signature:()
-~EpollSocketManager	epoll_socket_manager.cpp	/^SocketInfoManager::~EpollSocketManager()$/;"	f	class:SocketInfoManager	signature:()
+~EpollSocketManager	epoll_socket_manager.cpp	/^EpollSocketManager::~EpollSocketManager()$/;"	f	class:EpollSocketManager	signature:()
 ~EpollSocketManager	epoll_socket_manager.h	/^    ~EpollSocketManager();$/;"	p	class:EpollSocketManager	access:public	signature:()
+~NetworkManager	network_manager.cpp	/^NetworkManager::~NetworkManager()$/;"	f	class:NetworkManager	signature:()
+~NetworkManager	network_manager.h	/^    ~NetworkManager();$/;"	p	class:NetworkManager	access:public	signature:()
