@@ -1,4 +1,5 @@
 #include "message_factory.h"
+#include "common_define.h"
 
 
 MessageFactory::MessageFactory()
@@ -17,7 +18,7 @@ Message* MessageFactory::createMessage(int message_type)
     switch(message_type)
     {
         case MESSAGE_CAL_SUM_REQ:
-            message = new CalculateSumResMessage();
+            message = new CalculateSumReqMessage();
             break;
         case MESSAGE_CAL_SUM_RSP:
             message = new CalculateSumRspMessage();

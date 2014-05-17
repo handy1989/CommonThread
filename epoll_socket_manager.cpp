@@ -106,13 +106,5 @@ void EpollSocketManager::closeSocket(int sock_fd)
 
 bool EpollSocketManager::timeout(int cur_time_ms)
 {
-    if (cur_time > epoll_socket_ptr->socket_info[m_fd_index].m_time_ms + epoll_socket_ptr->socket_info[m_fd_index].m_conn_timeout_ms)
-    {
-        LOG(INFO) << "socket[" << m_fd_index << "] timeout cur_time[" << cur_time_ms << "] m_time_ms[" << epoll_socket_ptr->socket_info[m_fd_index].m_time_ms << "] m_conn_timeout_ms[" << epoll_socket_ptr->socket_info[m_fd_index].m_conn_timeout_ms << "]";
-        return true;
-    }
-    else
-    {
-        return false;
-    }
+    return false;
 }

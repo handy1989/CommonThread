@@ -3,6 +3,7 @@
 
 #include <glog/logging.h>
 
+#include "message.h"
 #include "calculate_sum_message.h"
 
 class MessageFactory

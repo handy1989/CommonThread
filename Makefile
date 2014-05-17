@@ -1,4 +1,4 @@
-LIBS=-lglog
+LIBS=-lglog -lpthread
 INCLUDES=-I.
 
 OBJECT=test

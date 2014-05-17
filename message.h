@@ -9,6 +9,7 @@
 #include "common_utility.h"
 #include "common_queue.h"
 
+
 class Message
 {
 public:

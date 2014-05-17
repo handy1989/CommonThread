@@ -9,6 +9,10 @@ class CalculateSumReqMessage : public Message
 public:
     CalculateSumReqMessage();
     ~CalculateSumReqMessage();
+    virtual void setHeaderControl()
+    {
+    
+    }
     virtual bool parseBody();
     virtual bool buildBody();
 };
@@ -18,6 +22,10 @@ class CalculateSumRspMessage : public Message
 public:
     CalculateSumRspMessage();
     ~CalculateSumRspMessage();
+    virtual void setHeaderControl()
+    {
+    
+    }
     virtual bool parseBody();
     virtual bool buildBody();
 };

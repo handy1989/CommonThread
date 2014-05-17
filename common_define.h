@@ -5,6 +5,8 @@
 
 #define MESSAGE_CAL_SUM_REQ 100
 #define MESSAGE_CAL_SUM_RSP 200
+
+
 typedef struct _message_header_t
 {
     int type;
