@@ -6,7 +6,7 @@
 
 class CommonThreadPool
 {
-    const static int STACK_SIZE = (256*1024);
+    const static int STACK_SIZE = (1024);
 public:
     CommonThreadPool(int pool_size) : m_pool_size(pool_size)
     {

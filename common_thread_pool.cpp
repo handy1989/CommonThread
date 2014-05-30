@@ -13,8 +13,10 @@ void CommonThreadPool::destroyThreadId()
 
 bool CommonThreadPool::startThreads()
 {
+    LOG(INFO) << "CommonThreadPool::startThreads()!";
     if (m_pool_size > 0)
     {
+        LOG(INFO) << "m_pool_size[" << m_pool_size << "]";
         destroyThreadId();
         pthread_attr_t attr;
         pthread_attr_init(&attr);

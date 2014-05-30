@@ -100,6 +100,7 @@ void ClientReceiverHandler::work()
 {
     int socket_fd;
     int ret;
+    LOG(INFO) << "client_receiver_handler work!";
     while (true)
     {
         socket_fd = -1;
@@ -113,7 +114,7 @@ void ClientReceiverHandler::work()
             LOG(INFO) << "ClientSocketQueue pop null!";
             continue;
         }
-        
+        LOG(INFO) << "client_receiver_handler pop socket_fd[" << socket_fd << "]";
         SocketInfoManager socket_info = EpollSocketManager::getInstance()->getSocketInfo(socket_fd);
         while (SOCKET_ERROR_SUCCESS == (ret =  recvCmd(socket_info)))
         {

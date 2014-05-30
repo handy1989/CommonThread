@@ -1,5 +1,7 @@
 #include "network_manager.h"
 
+NetworkManager* NetworkManager::m_instance = new NetworkManager();
+
 NetworkManager::NetworkManager()
 {
     m_queue_size = 0;
@@ -29,16 +31,19 @@ NetworkManager* NetworkManager::getInstance()
 
 void NetworkManager::setQueueSize(int queue_size)
 {
+    LOG(INFO) << "NetworkManager::setQueueSize(), queue_size[" << queue_size << "]";  
     m_queue_size = queue_size;
 }
 
 bool NetworkManager::initSocket(netaddres_info_t* netaddr, const int& addr_num, const int& wait_time_ms)
 {
+    LOG(INFO) << "NetworkManager::initSocket()!";
     return EpollSocketManager::getInstance()->initSocket(netaddr, addr_num, wait_time_ms);
 }
 
 void NetworkManager::initClientRecv(int check_internal, int recv_thread_count)
 {
+    LOG(INFO) << "NetworkManager::initClientRecv()!";
     m_sock_queue = new ClientSocketQueue();
     m_sock_queue->init(m_queue_size);
     
@@ -51,8 +56,10 @@ void NetworkManager::initClientRecv(int check_internal, int recv_thread_count)
 
 bool NetworkManager::start()
 {
+    LOG(INFO) << "NetworkManager::start()!";
     if (m_client_connection_handler)
     {
+        LOG(INFO) << "client_connection_handler starts";
         if (!m_client_connection_handler->startThreads())
         {
             LOG(ERROR) << "client_connection_handler starts failed!";
@@ -61,6 +68,7 @@ bool NetworkManager::start()
     }
     if (m_client_receiver_handler)
     {
+        LOG(INFO) << "client_receiver_handler starts";
         if (!m_client_receiver_handler->startThreads())
         {
             LOG(ERROR) << "client_reveiver_handler starts failed!";
@@ -70,8 +78,9 @@ bool NetworkManager::start()
     return true;
 }
 
-void NetworkManager::waitThreadTermination()
+void NetworkManager::waitThreadsTermination()
 {
+    LOG(INFO) << "NetworkManager::waitThreadsTermination()!";
     m_client_connection_handler->waitThreadsTermination();
     m_client_receiver_handler->waitThreadsTermination();
 }

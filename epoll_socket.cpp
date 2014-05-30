@@ -122,7 +122,7 @@ bool EpollSocket::add(int sock_fd, int cur_time, int listen_port, int port, int 
     if (ret)
     {
         ++m_socket_num;
-        LOG(INFO) << "add success, fd[" << sock_fd << "] sock_addr[" << sock_addr << "] listen_port[" << listen_port << "] port[" << port << "]";
+        LOG(INFO) << "add success, fd[" << sock_fd << "] sock_addr[" << sock_addr << "] listen_port[" << listen_port << "] port[" << port << "] type[" << sock_type << "]";
         LOG(INFO) << "now m_socket_num is " << m_socket_num;
     }
     else
@@ -181,7 +181,7 @@ bool EpollSocket::listenPort()
             return false;
         }
         add(m_socket[i], cur_time, m_net_addr[i].m_port, 0, 0, 0, SOCKET_TYPE_SERVER);
-        LOG(INFO) << "socket[" << i << "] listens on port: " << m_net_addr[i].m_port << " success!";
+        LOG(INFO) << "socket[" << i << "] type[SOCKET_TYPE_SERVER] listens on port: " << m_net_addr[i].m_port << " success!";
     }
     return true;
 }

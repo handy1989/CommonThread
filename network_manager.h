@@ -18,7 +18,7 @@ public:
 
     static NetworkManager* getInstance();
     bool start();
-    void waitThreadTermination();
+    void waitThreadsTermination();
 
 private:
     static NetworkManager* m_instance;

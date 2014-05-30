@@ -52,16 +52,17 @@ public:
     bool pop(T& retVal, int wait_ms)
     {
         bool ret = false;
+        LOG(INFO) << "pop begin, wait_ms[" << wait_ms << "]";
         pthread_mutex_lock(&m_mutex);
 
         try
         {
             if (m_queue.empty())
             {
-                // queue is empty
+                LOG(INFO) << "queue is empty now!";
                 if (0 == wait_ms)
                 {
-                    // wait infinitely
+                    LOG(INFO) << "wait infinitely!";
                     while (m_queue.empty())
                     {
                         pthread_cond_wait(&m_cond_not_empty, &m_mutex);
@@ -69,7 +70,7 @@ public:
                 }
                 else
                 {
-                    // wait for timeout
+                    LOG(INFO) << "wait for timeout!";
                     struct timespec timespot;
                     if (wait_ms > 0)
                     {
@@ -96,22 +97,24 @@ public:
             ret = false;
         }
         pthread_mutex_unlock(&m_mutex);
+        LOG(INFO) << "pop end!";
         return ret;
     }
 
     bool push(const T& element, int wait_ms)
     {
         bool ret = false;
+        LOG(INFO) << "push begin, wait_ms[" << wait_ms << "]";
         pthread_mutex_lock(&m_mutex);
 
         try
         {
             if (m_queue.size() >= m_capacity)
             {
-                //queue is full
+                LOG(INFO) << "queue is full now!";
                 if (0 == wait_ms)
                 {
-                    //wait infinitely
+                    LOG(INFO) << "wait infinitely!";
                     while (m_queue.size() >= m_capacity)
                     {
                         pthread_cond_wait(&m_cond_not_full, &m_mutex);
@@ -119,7 +122,7 @@ public:
                 }
                 else
                 {
-                    //wait for timeout
+                    LOG(INFO) << "wait for timeout!";
                     struct timespec timespot;
                     if (wait_ms > 0)
                     {
@@ -149,6 +152,7 @@ public:
             ret = false;
         }
         pthread_mutex_unlock(&m_mutex);
+        LOG(INFO) << "push end!";
         return ret;
     }
     

@@ -1,0 +1,110 @@
+Log file created at: 2014/05/30 01:26:43
+Running on machine: ubuntu
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0530 01:26:43.341842 16182 network_manager.cpp:40] NetworkManager::initSocket()!
+I0530 01:26:43.342118 16182 epoll_socket_manager.cpp:22] EpollSocketManager init begin!
+I0530 01:26:43.342126 16182 epoll_socket.cpp:31] EpollSocket init
+I0530 01:26:43.342214 16182 epoll_socket.cpp:57] EpollSocket init success!
+I0530 01:26:43.342288 16182 epoll_socket.cpp:168] socket[0] 5 bind to port 6666 success
+I0530 01:26:43.342303 16182 epoll_socket.cpp:96] add fd: 5
+I0530 01:26:43.342314 16182 epoll_socket.cpp:125] add success, fd[5] sock_addr[0] listen_port[6666] port[0] type[1]
+I0530 01:26:43.342319 16182 epoll_socket.cpp:126] now m_socket_num is 1
+I0530 01:26:43.342324 16182 epoll_socket.cpp:184] socket[0] type[SOCKET_TYPE_SERVER] listens on port: 6666 success!
+I0530 01:26:43.342327 16182 epoll_socket_manager.cpp:32] EpollSocketManager init success!
+I0530 01:26:43.342330 16182 network_manager.cpp:34] NetworkManager::setQueueSize(), queue_size[100]
+I0530 01:26:43.342334 16182 network_manager.cpp:46] NetworkManager::initClientRecv()!
+I0530 01:26:43.342353 16182 network_manager.cpp:59] NetworkManager::start()!
+I0530 01:26:43.342357 16182 network_manager.cpp:62] client_connection_handler starts
+I0530 01:26:43.342360 16182 common_thread_pool.cpp:16] CommonThreadPool::startThreads()!
+I0530 01:26:43.342365 16182 common_thread_pool.cpp:19] m_pool_size[1]
+I0530 01:26:43.342412 16182 network_manager.cpp:71] client_receiver_handler starts
+I0530 01:26:43.342417 16182 common_thread_pool.cpp:16] CommonThreadPool::startThreads()!
+I0530 01:26:43.342421 16182 common_thread_pool.cpp:19] m_pool_size[10]
+I0530 01:26:43.342566 16182 network_manager.cpp:83] NetworkManager::waitThreadsTermination()!
+I0530 01:26:43.342610 16189 client_receiver_handler.cpp:103] client_receiver_handler work!
+I0530 01:26:43.342617 16189 common_queue.h:55] pop begin, wait_ms[0]
+I0530 01:26:43.342620 16189 common_queue.h:62] queue is empty now!
+I0530 01:26:43.342623 16189 common_queue.h:65] wait infinitely!
+I0530 01:26:43.342644 16190 client_receiver_handler.cpp:103] client_receiver_handler work!
+I0530 01:26:43.342648 16190 common_queue.h:55] pop begin, wait_ms[0]
+I0530 01:26:43.342653 16190 common_queue.h:62] queue is empty now!
+I0530 01:26:43.342655 16190 common_queue.h:65] wait infinitely!
+I0530 01:26:43.342672 16191 client_receiver_handler.cpp:103] client_receiver_handler work!
+I0530 01:26:43.342676 16191 common_queue.h:55] pop begin, wait_ms[0]
+I0530 01:26:43.342679 16191 common_queue.h:62] queue is empty now!
+I0530 01:26:43.342682 16191 common_queue.h:65] wait infinitely!
+I0530 01:26:43.342701 16192 client_receiver_handler.cpp:103] client_receiver_handler work!
+I0530 01:26:43.342705 16192 common_queue.h:55] pop begin, wait_ms[0]
+I0530 01:26:43.342708 16192 common_queue.h:62] queue is empty now!
+I0530 01:26:43.342711 16192 common_queue.h:65] wait infinitely!
+I0530 01:26:43.342730 16193 client_receiver_handler.cpp:103] client_receiver_handler work!
+I0530 01:26:43.342732 16193 common_queue.h:55] pop begin, wait_ms[0]
+I0530 01:26:43.342736 16193 common_queue.h:62] queue is empty now!
+I0530 01:26:43.342738 16193 common_queue.h:65] wait infinitely!
+I0530 01:26:43.342779 16188 client_receiver_handler.cpp:103] client_receiver_handler work!
+I0530 01:26:43.342797 16188 common_queue.h:55] pop begin, wait_ms[0]
+I0530 01:26:43.342802 16188 common_queue.h:62] queue is empty now!
+I0530 01:26:43.342804 16188 common_queue.h:65] wait infinitely!
+I0530 01:26:43.342825 16187 client_receiver_handler.cpp:103] client_receiver_handler work!
+I0530 01:26:43.342829 16187 common_queue.h:55] pop begin, wait_ms[0]
+I0530 01:26:43.342833 16187 common_queue.h:62] queue is empty now!
+I0530 01:26:43.342835 16187 common_queue.h:65] wait infinitely!
+I0530 01:26:43.342855 16186 client_receiver_handler.cpp:103] client_receiver_handler work!
+I0530 01:26:43.342859 16186 common_queue.h:55] pop begin, wait_ms[0]
+I0530 01:26:43.342862 16186 common_queue.h:62] queue is empty now!
+I0530 01:26:43.342865 16186 common_queue.h:65] wait infinitely!
+I0530 01:26:43.342906 16185 client_receiver_handler.cpp:103] client_receiver_handler work!
+I0530 01:26:43.342911 16185 common_queue.h:55] pop begin, wait_ms[0]
+I0530 01:26:43.342932 16185 common_queue.h:62] queue is empty now!
+I0530 01:26:43.342936 16185 common_queue.h:65] wait infinitely!
+I0530 01:26:43.342943 16184 client_receiver_handler.cpp:103] client_receiver_handler work!
+I0530 01:26:43.342947 16184 common_queue.h:55] pop begin, wait_ms[0]
+I0530 01:26:43.342950 16184 common_queue.h:62] queue is empty now!
+I0530 01:26:43.342953 16184 common_queue.h:65] wait infinitely!
+I0530 01:26:43.443888 16183 epoll_socket.cpp:63] waitAvailableSocket: 0
+I0530 01:26:43.443922 16183 client_connection_handler.cpp:73] available socket num: 0
+I0530 01:26:43.544937 16183 epoll_socket.cpp:63] waitAvailableSocket: 0
+I0530 01:26:43.544965 16183 client_connection_handler.cpp:73] available socket num: 0
+I0530 01:26:43.645948 16183 epoll_socket.cpp:63] waitAvailableSocket: 0
+I0530 01:26:43.645972 16183 client_connection_handler.cpp:73] available socket num: 0
+I0530 01:26:43.746896 16183 epoll_socket.cpp:63] waitAvailableSocket: 0
+I0530 01:26:43.746922 16183 client_connection_handler.cpp:73] available socket num: 0
+I0530 01:26:43.847890 16183 epoll_socket.cpp:63] waitAvailableSocket: 0
+I0530 01:26:43.847915 16183 client_connection_handler.cpp:73] available socket num: 0
+I0530 01:26:43.948941 16183 epoll_socket.cpp:63] waitAvailableSocket: 0
+I0530 01:26:43.948961 16183 client_connection_handler.cpp:73] available socket num: 0
+I0530 01:26:44.049970 16183 epoll_socket.cpp:63] waitAvailableSocket: 0
+I0530 01:26:44.050006 16183 client_connection_handler.cpp:73] available socket num: 0
+I0530 01:26:44.150954 16183 epoll_socket.cpp:63] waitAvailableSocket: 0
+I0530 01:26:44.150975 16183 client_connection_handler.cpp:73] available socket num: 0
+I0530 01:26:44.251868 16183 epoll_socket.cpp:63] waitAvailableSocket: 0
+I0530 01:26:44.251890 16183 client_connection_handler.cpp:73] available socket num: 0
+I0530 01:26:44.352928 16183 epoll_socket.cpp:63] waitAvailableSocket: 0
+I0530 01:26:44.352957 16183 client_connection_handler.cpp:73] available socket num: 0
+I0530 01:26:44.453881 16183 epoll_socket.cpp:63] waitAvailableSocket: 0
+I0530 01:26:44.453902 16183 client_connection_handler.cpp:73] available socket num: 0
+I0530 01:26:44.554951 16183 epoll_socket.cpp:63] waitAvailableSocket: 0
+I0530 01:26:44.554967 16183 client_connection_handler.cpp:73] available socket num: 0
+I0530 01:26:44.655946 16183 epoll_socket.cpp:63] waitAvailableSocket: 0
+I0530 01:26:44.655973 16183 client_connection_handler.cpp:73] available socket num: 0
+I0530 01:26:44.756860 16183 epoll_socket.cpp:63] waitAvailableSocket: 0
+I0530 01:26:44.756876 16183 client_connection_handler.cpp:73] available socket num: 0
+I0530 01:26:44.857878 16183 epoll_socket.cpp:63] waitAvailableSocket: 0
+I0530 01:26:44.857895 16183 client_connection_handler.cpp:73] available socket num: 0
+I0530 01:26:44.958994 16183 epoll_socket.cpp:63] waitAvailableSocket: 0
+I0530 01:26:44.959031 16183 client_connection_handler.cpp:73] available socket num: 0
+I0530 01:26:45.060125 16183 epoll_socket.cpp:63] waitAvailableSocket: 0
+I0530 01:26:45.060161 16183 client_connection_handler.cpp:73] available socket num: 0
+I0530 01:26:45.160941 16183 epoll_socket.cpp:63] waitAvailableSocket: 0
+I0530 01:26:45.160962 16183 client_connection_handler.cpp:73] available socket num: 0
+I0530 01:26:45.261945 16183 epoll_socket.cpp:63] waitAvailableSocket: 0
+I0530 01:26:45.261970 16183 client_connection_handler.cpp:73] available socket num: 0
+I0530 01:26:45.362964 16183 epoll_socket.cpp:63] waitAvailableSocket: 0
+I0530 01:26:45.362990 16183 client_connection_handler.cpp:73] available socket num: 0
+I0530 01:26:45.463963 16183 epoll_socket.cpp:63] waitAvailableSocket: 0
+I0530 01:26:45.463985 16183 client_connection_handler.cpp:73] available socket num: 0
+I0530 01:26:45.564949 16183 epoll_socket.cpp:63] waitAvailableSocket: 0
+I0530 01:26:45.564970 16183 client_connection_handler.cpp:73] available socket num: 0
+I0530 01:26:45.665926 16183 epoll_socket.cpp:63] waitAvailableSocket: 0
+I0530 01:26:45.665951 16183 client_connection_handler.cpp:73] available socket num: 0
+I0530 01:26:45.764152 16183 epoll_

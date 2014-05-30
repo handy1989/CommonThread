@@ -15,6 +15,9 @@ public:
     }
     virtual bool parseBody();
     virtual bool buildBody();
+private:
+    double para1;
+    double para2;
 };
 
 class CalculateSumRspMessage : public Message
@@ -28,5 +31,8 @@ public:
     }
     virtual bool parseBody();
     virtual bool buildBody();
+
+private:
+    double m_result;
 };
 #endif
