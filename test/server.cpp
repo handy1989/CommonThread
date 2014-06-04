@@ -1,7 +1,7 @@
 #include <stdio.h>
-#include "epoll_socket_manager.h"
-#include "network_manager.h"
-#include "server_msg_handler.h"
+#include "../epoll_socket_manager.h"
+#include "../network_manager.h"
+#include "../server_msg_handler.h"
 
 ServerMsgHandler* m_cmd_handler;
 

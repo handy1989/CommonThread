@@ -1,12 +1,15 @@
 LIBS=-lglog -lpthread
 INCLUDES=-I.
 
-OBJECT=test
+OBJECT=server client
 
 all: $(OBJECT)
 
-SRC=$(shell find . -name "*.cpp")
-test: $(SRC)
+SRC=$(shell find . -maxdepth 1 -name "*.cpp")
+server: test/server.cpp $(SRC)
+	g++ $^ -o $@ $(LIBS) $(INCLUDES)
+
+client: test/client.cpp $(SRC)
 	g++ $^ -o $@ $(LIBS) $(INCLUDES)
 
 clean :

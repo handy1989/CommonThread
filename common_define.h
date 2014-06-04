@@ -2,9 +2,10 @@
 #define _COMMON_DEFINE_H_
 
 #define MSG_SIGN 1
-
 #define MESSAGE_CAL_SUM_REQ 100
 #define MESSAGE_CAL_SUM_RSP 200
+
+#define btq_status_success 0
 
 
 const int32_t ERROR_SUCCESS = 0;
@@ -20,7 +21,10 @@ const int32_t ERROR_BUILD_MESSAGE_ERROR = 1002;
 typedef struct _message_header_t
 {
     int type;
+    int status;
     int sequence;
+    int header_size;
+    int payload_size;
 }message_header_t;
 
 #endif

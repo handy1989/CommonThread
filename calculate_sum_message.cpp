@@ -12,11 +12,13 @@ CalculateSumReqMessage::~CalculateSumReqMessage()
 
 bool CalculateSumReqMessage::parseBody()
 {
+    LOG(INFO) << "CalculateSumReqMessage::parseBody!";
     return true;
 }
 
 bool CalculateSumReqMessage::buildBody()
 {
+    LOG(INFO) << "CalculateSumReqMessage::buildBody!";
     return true;
 }
 
@@ -32,10 +34,12 @@ CalculateSumRspMessage::~CalculateSumRspMessage()
 
 bool CalculateSumRspMessage::parseBody()
 {
+    LOG(INFO) << "CalculateSumRspMessage::parseBody!";
     return true;
 }
 
 bool CalculateSumRspMessage::buildBody()
 {
+    LOG(INFO) << "CalculateSumReqMessage::buildBody!"; 
     return true;
 }

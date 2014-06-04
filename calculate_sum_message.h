@@ -1,6 +1,7 @@
 #ifndef _CALCULATE_SUM_MESSAGE_H_
 #define _CALCULATE_SUM_MESSAGE_H_
 
+#include <glog/logging.h>
 #include "message.h"
 #include "common_define.h"
 
@@ -43,6 +44,10 @@ public:
     void setResult(double para1, double para2)
     {
         m_result = para1 + para2;
+    }
+    double getResult()
+    {
+        return m_result;
     }
 
 private:
